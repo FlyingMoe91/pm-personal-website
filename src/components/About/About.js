@@ -6,34 +6,35 @@ export default function About() {
     <AboutWrapper>
       <AboutIntro>
         <AboutIntroText>
-          <p>Welcome to my page!</p>
-          <p>My name is Patrick Müller, 30years old from Berlin, Germany.</p>
           <p>
-            I recently finished a web-development bootcamp with{' '}
-            <a href="https://www.neuefische.de/">neuefische</a> and now I'm on
-            my way to be the developer you're looking for.
+            My name is <span>Patrick</span>
+            <span> Müller</span>. I'm a 30year old <span> junior</span>
+            <span> frontend</span>
+            <span> developer</span> from Berlin, Germany. A year ago I started
+            teaching myself web development with online courses and websites for
+            about half a year and continued with a three month
+            <span>bootcamp</span>
+            <span> at</span>
+            <span>
+              <a href="https://www.neuefische.de/"> neuefische</a>
+            </span>
+            . I'm still at the beginning of my new journey, but I can't wait to
+            make my next steps.
           </p>
-          <LinkToBootcamp href="#bootcamp">
-            more about the bootcamp
-          </LinkToBootcamp>
         </AboutIntroText>
         <AboutImage src={aboutMePic} alt="myself" />
       </AboutIntro>
-      <p>
-        My location-independent life in the past three years gave me a new
-        perspective on the subject work. Thanks to an online
-        masterclass(fullstack) I realized new chances for myself. Coding allows
-        me to continue to be independent but also to grow in a team. I can
-        implement diverse projects and see the results straight away.
-      </p>
+      <Line />
     </AboutWrapper>
   );
 }
 
 const AboutWrapper = styled.section`
-  background-color: #b59799;
+  position: relative;
+  height: 100vh;
   padding: 20px;
-  color: white;
+  padding-bottom: 0;
+  color: #313035;
   text-align: center;
   line-height: 1.5rem;
 
@@ -50,6 +51,24 @@ const AboutIntro = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 20px 0;
+
+  span {
+    position: relative;
+    z-index: 1;
+
+    ::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 0.6rem;
+      width: 100%;
+      background: #cdf2f2;
+      z-index: -1;
+    }
+  }
 
   @media screen and (max-width: 768px) {
     flex-direction: column-reverse;
@@ -57,11 +76,8 @@ const AboutIntro = styled.div`
 `;
 
 const AboutIntroText = styled.div`
-  width: 80vw;
-
-  p {
-    margin-bottom: 6px;
-  }
+  width: 75vw;
+  font-weight: 300;
 
   @media screen and (min-width: 768px) {
     width: 60vw;
@@ -73,6 +89,7 @@ const AboutImage = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin: 10px;
   object-fit: cover;
 
   @media screen and (min-width: 768px) {
@@ -81,11 +98,12 @@ const AboutImage = styled.img`
   }
 `;
 
-const LinkToBootcamp = styled.a`
-  text-decoration: none;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 2px;
-  color: white;
-  font-size: 0.8rem;
+const Line = styled.div`
+  width: 1px;
+  height: 15vh;
+  background: black;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
 `;
