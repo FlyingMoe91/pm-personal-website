@@ -7,17 +7,15 @@ export default function About() {
       <AboutIntro>
         <AboutIntroText>
           <p>
-            My name is <span>Patrick</span>
-            <span> Müller</span>. I'm a 30year old <span> junior</span>
-            <span> frontend</span>
-            <span> developer</span> from Berlin, Germany. A year ago I started
-            teaching myself web development with online courses and websites for
-            about half a year and continued with a three month
-            <span>bootcamp</span>
-            <span> at</span>
-            <span>
-              <a href="https://www.neuefische.de/"> neuefische</a>
-            </span>
+            My name is <span>Patrick</span> <span>Müller</span>. I'm a 30year
+            old <span>junior</span> <span>frontend</span> <span>developer</span>{' '}
+            from Berlin, Germany. A year ago I started teaching myself web
+            development with online courses and websites for about half a year
+            and continued with a three month
+            <span>bootcamp</span> <span>at</span>{' '}
+            <a href="https://www.neuefische.de/">
+              <span>neuefische</span>
+            </a>
             . I'm still at the beginning of my new journey, but I can't wait to
             make my next steps.
           </p>
@@ -31,15 +29,19 @@ export default function About() {
 
 const AboutWrapper = styled.section`
   position: relative;
-  height: 100vh;
-  padding: 20px;
+  height: 90vh;
   padding-bottom: 0;
   color: #313035;
   text-align: center;
   line-height: 1.5rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 481px) {
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 481px) {
     line-height: 2rem;
+    height: 60vh;
   }
 
   @media screen and (min-width: 1200px) {
@@ -48,6 +50,11 @@ const AboutWrapper = styled.section`
 `;
 
 const AboutIntro = styled.div`
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -70,18 +77,26 @@ const AboutIntro = styled.div`
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 480px) {
     flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 5vh;
   }
 `;
 
 const AboutIntroText = styled.div`
-  width: 75vw;
+  width: 70vw;
+  font-size: 1rem;
   font-weight: 300;
+  text-align: left;
 
-  @media screen and (min-width: 768px) {
-    width: 60vw;
+  @media screen and (min-width: 480px) {
+    width: 50vw;
     line-height: 2rem;
+  }
+
+  @media screen and (min-width: 1025px) {
+    font-size: 1.3rem;
   }
 `;
 
@@ -89,10 +104,11 @@ const AboutImage = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  margin: 10px;
   object-fit: cover;
+  filter: grayscale(70%);
+  transition: 0.8s;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1025px) {
     width: 300px;
     height: 300px;
   }
@@ -100,7 +116,7 @@ const AboutImage = styled.img`
 
 const Line = styled.div`
   width: 1px;
-  height: 15vh;
+  height: 10vh;
   background: black;
   margin: 0 auto;
   position: absolute;

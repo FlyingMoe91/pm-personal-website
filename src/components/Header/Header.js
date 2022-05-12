@@ -13,12 +13,19 @@ export default function Header() {
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
         </Headline>
       </HeaderContent>
-      <AboutMeArrow href="#">
+      <AboutMeArrow onClick={handleScrollToAboutMe}>
         about me
         <ArrowIcon />
       </AboutMeArrow>
     </HeaderWrapper>
   );
+
+  function handleScrollToAboutMe() {
+    window.scrollTo({
+      top: 670,
+      behavior: 'smooth',
+    });
+  }
 }
 
 const HeaderWrapper = styled.header`
@@ -54,6 +61,7 @@ const Headline = styled.h1`
   text-align: center;
   color: #de3612;
   padding: 20px;
+  transition: 0.8s;
 
   @media screen and (min-width: 1024px) {
     font-size: 4vw;
@@ -61,7 +69,9 @@ const Headline = styled.h1`
   }
 `;
 
-const AboutMeArrow = styled.a`
+const AboutMeArrow = styled.button`
+  border: none;
+  background: transparent;
   position: absolute;
   right: -30px;
   bottom: 60px;
@@ -72,6 +82,11 @@ const AboutMeArrow = styled.a`
   gap: 10px;
   text-decoration: none;
   transition: 0.8s;
+  cursor: pointer;
+
+  @media screen and (min-width: 1024px) {
+    right: 50%;
+  }
 `;
 
 const ArrowIcon = styled(HiOutlineArrowNarrowRight)`
