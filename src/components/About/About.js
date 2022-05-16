@@ -3,7 +3,7 @@ import aboutMePic from '../../images/aboutMe.png';
 
 export default function About() {
   return (
-    <AboutWrapper>
+    <AboutWrapper id="about">
       <AboutIntro>
         <AboutIntroText>
           <p>
@@ -13,7 +13,11 @@ export default function About() {
             development with online courses and websites for about half a year
             and continued with a three month
             <span>bootcamp</span> <span>at</span>{' '}
-            <a href="https://www.neuefische.de/">
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://www.neuefische.de/"
+            >
               <span>neuefische</span>
             </a>
             . I'm still at the beginning of my new journey, but I can't wait to
@@ -34,6 +38,7 @@ const AboutWrapper = styled.section`
   color: #313035;
   text-align: center;
   line-height: 1.5rem;
+  scroll-snap-align: center;
 
   @media screen and (max-width: 481px) {
     height: 100vh;

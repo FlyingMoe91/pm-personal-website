@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import headerPic from '../../images/header-pic.png';
 import NavBar from '../NavBar/NavBar';
-
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 
 export default function Header() {
@@ -13,25 +12,19 @@ export default function Header() {
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
         </Headline>
       </HeaderContent>
-      <AboutMeArrow onClick={handleScrollToAboutMe}>
+      <AboutMeArrow href="#about">
         about me
         <ArrowIcon />
       </AboutMeArrow>
     </HeaderWrapper>
   );
-
-  function handleScrollToAboutMe() {
-    window.scrollTo({
-      top: 670,
-      behavior: 'smooth',
-    });
-  }
 }
 
 const HeaderWrapper = styled.header`
   background: url(${headerPic}) 20% 48% no-repeat;
   background-size: cover;
   height: 100vh;
+  scroll-snap-align: center;
 
   @media screen and (min-width: 1024px) {
     background-size: 50% 100%;
@@ -69,7 +62,7 @@ const Headline = styled.h1`
   }
 `;
 
-const AboutMeArrow = styled.button`
+const AboutMeArrow = styled.a`
   border: none;
   background: transparent;
   position: absolute;
