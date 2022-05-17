@@ -49,10 +49,10 @@ const ProjectsWrapper = styled.section`
   scroll-snap-align: center;
   line-height: 1.5rem;
   font-weight: 300;
+  scrollbar-width: none; /*for firefox on windows */
 
   ::-webkit-scrollbar {
     display: none;
-    scrollbar-width: none; /*for Firefox */
   }
 `;
 
@@ -65,10 +65,10 @@ const ProjectList = styled.ul`
   overflow: scroll hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scrollbar-width: none; /*for firefox on windows */
 
   ::-webkit-scrollbar {
     display: none;
-    scrollbar-width: none; /*for Firefox */
   }
 
   li {
