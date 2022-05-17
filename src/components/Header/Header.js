@@ -40,7 +40,7 @@ const HeaderContent = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 20vh;
+  gap: 10vh;
   padding: 5vw;
 
   @media screen and (min-width: 1024px) {

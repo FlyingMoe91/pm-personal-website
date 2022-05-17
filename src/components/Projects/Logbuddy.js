@@ -1,11 +1,14 @@
 import styled from 'styled-components';
+import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
 import LogbuddyMobile from '../../images/logbuddy.png';
 import LogbuddyDesktop from '../../images/LogBuddy.png';
+// import { RiArrowRightSLine as ArrowRight } from 'react-icons/ri';
+// import { RiArrowLeftSLine as ArrowLeft } from 'react-icons/ri';
 
 export default function Logbuddy() {
   return (
-    <ProjectSlide>
+    <ProjectSlide id="logbuddy">
       <SlideHeader>
         <ProjectName>LogBuddy</ProjectName>
         <LogbuddyImageMobile src={LogbuddyMobile} alt="logbuddy app" />
@@ -42,11 +45,18 @@ export default function Logbuddy() {
           </p>
         </div>
       </SlideMain>
+      <JumpLeft href="#projects">
+        <ScreenReaderOnly>previous project</ScreenReaderOnly>
+      </JumpLeft>
+      <JumpRight href="#projects">
+        <ScreenReaderOnly>next project</ScreenReaderOnly>
+      </JumpRight>
     </ProjectSlide>
   );
 }
 
 const ProjectSlide = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
   padding: 30px;
@@ -130,4 +140,20 @@ const SlideMain = styled.div`
       width: 55vw;
     }
   }
+`;
+
+const JumpLeft = styled.a`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  height: 100vh;
+`;
+
+const JumpRight = styled.a`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20vw;
+  height: 100vh;
 `;

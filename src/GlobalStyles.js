@@ -9,6 +9,8 @@ export default createGlobalStyle`
 
 html {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
 }
 
 body {
