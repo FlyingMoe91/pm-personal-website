@@ -49,6 +49,10 @@ const ProjectsWrapper = styled.section`
   scroll-snap-align: center;
   line-height: 1.5rem;
   font-weight: 300;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const ProjectList = styled.ul`
@@ -61,6 +65,10 @@ const ProjectList = styled.ul`
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   li {
     scroll-snap-align: center;
   }
@@ -70,7 +78,6 @@ const ProjectSlide = styled.div`
   position: relative;
   width: 100vw;
   height: 100vh;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,7 +95,7 @@ const ProjectBackground = styled.div`
   background-size: cover;
   filter: grayscale(50%);
   color: white;
-  width: 80%;
+  width: 70%;
   height: 50%;
   position: relative;
   line-height: 5vh;
