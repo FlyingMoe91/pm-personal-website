@@ -45,6 +45,7 @@ const HeaderContent = styled.div`
 
   @media screen and (min-width: 1024px) {
     width: 50%;
+    padding: 2vw;
   }
 `;
 
