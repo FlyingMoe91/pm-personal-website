@@ -52,6 +52,7 @@ const ProjectsWrapper = styled.section`
 
   ::-webkit-scrollbar {
     display: none;
+    width: 0;
   }
 `;
 
@@ -67,6 +68,7 @@ const ProjectList = styled.ul`
 
   ::-webkit-scrollbar {
     display: none;
+    width: 0;
   }
 
   li {
