@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
 import LogbuddyMobile from '../../images/logbuddy.png';
-import LogbuddyDesktop from '../../images/LogBuddy.png';
 // import { RiArrowRightSLine as ArrowRight } from 'react-icons/ri';
 // import { RiArrowLeftSLine as ArrowLeft } from 'react-icons/ri';
 
@@ -12,7 +11,6 @@ export default function Logbuddy() {
       <SlideHeader>
         <ProjectName>LogBuddy</ProjectName>
         <LogbuddyImageMobile src={LogbuddyMobile} alt="logbuddy app" />
-        <LogbuddyImageDesktop src={LogbuddyDesktop} alt="logbuddy app" />
       </SlideHeader>
       <SlideMain>
         <div>
@@ -45,12 +43,12 @@ export default function Logbuddy() {
           </p>
         </div>
       </SlideMain>
-      <JumpLeft href="#projects">
+      <NextSlide href="#projects">
         <ScreenReaderOnly>previous project</ScreenReaderOnly>
-      </JumpLeft>
-      <JumpRight href="#projects">
+      </NextSlide>
+      <PreviousSlide href="#projects">
         <ScreenReaderOnly>next project</ScreenReaderOnly>
-      </JumpRight>
+      </PreviousSlide>
     </ProjectSlide>
   );
 }
@@ -86,15 +84,6 @@ const LogbuddyImageMobile = styled.img`
   }
   @media screen and (min-width: 1025px) {
     width: 40vw;
-  }
-`;
-
-const LogbuddyImageDesktop = styled.img`
-  @media screen and (max-width: 769px) {
-    display: none;
-  }
-  @media screen and (min-width: 769px) {
-    display: none;
   }
 `;
 
@@ -138,11 +127,15 @@ const SlideMain = styled.div`
       font-size: 1.3rem;
       line-height: 2rem;
       width: 55vw;
+
+      @media screen and (max-height: 766px) {
+        font-size: 1rem;
+      }
     }
   }
 `;
 
-const JumpLeft = styled.a`
+const PreviousSlide = styled.a`
   position: absolute;
   top: 0;
   left: 0;
@@ -150,7 +143,7 @@ const JumpLeft = styled.a`
   height: 100vh;
 `;
 
-const JumpRight = styled.a`
+const NextSlide = styled.a`
   position: absolute;
   top: 0;
   right: 0;

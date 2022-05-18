@@ -13,7 +13,7 @@ export default function Header() {
         </Headline>
       </HeaderContent>
       <AboutMeArrow href="#about">
-        about me
+        intro
         <ArrowIcon />
       </AboutMeArrow>
     </HeaderWrapper>
@@ -67,7 +67,7 @@ const AboutMeArrow = styled.a`
   border: none;
   background: transparent;
   position: absolute;
-  right: -30px;
+  right: -15px;
   bottom: 60px;
   color: white;
   transform: rotate(90deg);
