@@ -46,6 +46,7 @@ const SkillsWrapper = styled.section`
   background: #cdf2f2;
   position: relative;
   text-align: center;
+  text-transform: uppercase;
   padding: 40px;
   height: 450px;
   scroll-snap-align: center;

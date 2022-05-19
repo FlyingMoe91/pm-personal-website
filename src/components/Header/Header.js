@@ -12,7 +12,7 @@ export default function Header() {
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
         </Headline>
       </HeaderContent>
-      <AboutMeArrow href="#about">
+      <AboutMeArrow href="#intro">
         intro
         <ArrowIcon />
       </AboutMeArrow>

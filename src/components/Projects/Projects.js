@@ -90,6 +90,7 @@ const ProjectSlide = styled.div`
 const ProjectName = styled.h2`
   color: #de3612;
   font-size: 2rem;
+  text-transform: uppercase;
 `;
 
 const ProjectBackground = styled.div`

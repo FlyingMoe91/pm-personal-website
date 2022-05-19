@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import aboutMePic from '../../images/aboutMe.png';
+import IntroPic from '../../images/intro-pic.png';
 
-export default function About() {
+export default function Intro() {
   return (
-    <AboutWrapper id="about">
-      <AboutIntro>
-        <AboutIntroText>
+    <Wrapper id="intro">
+      <IntroMain>
+        <IntroText>
           <p>
             My name is <span>Patrick</span> <span>Müller</span>. I'm a 30year
             old <span>junior</span> <span>frontend</span> <span>developer</span>{' '}
@@ -23,15 +23,15 @@ export default function About() {
             . I'm still at the beginning of my new journey, but I can't wait to
             make my next steps.
           </p>
-        </AboutIntroText>
-        <AboutImage src={aboutMePic} alt="myself" />
-      </AboutIntro>
+        </IntroText>
+        <IntroImage src={IntroPic} alt="myself" />
+      </IntroMain>
       <Line />
-    </AboutWrapper>
+    </Wrapper>
   );
 }
 
-const AboutWrapper = styled.section`
+const Wrapper = styled.section`
   position: relative;
   height: 90vh;
   padding-bottom: 0;
@@ -54,7 +54,7 @@ const AboutWrapper = styled.section`
   }
 `;
 
-const AboutIntro = styled.div`
+const IntroMain = styled.div`
   position: absolute;
   right: 0;
   left: 0;
@@ -89,7 +89,7 @@ const AboutIntro = styled.div`
   }
 `;
 
-const AboutIntroText = styled.div`
+const IntroText = styled.div`
   width: 70vw;
   font-size: 1rem;
   font-weight: 300;
@@ -105,7 +105,7 @@ const AboutIntroText = styled.div`
   }
 `;
 
-const AboutImage = styled.img`
+const IntroImage = styled.img`
   width: 200px;
   height: 200px;
   border-radius: 50%;
