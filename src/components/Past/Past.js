@@ -68,7 +68,7 @@ const DescriptionPast = styled.p`
   @media screen and (min-width: 1201px) {
     font-size: 2rem;
     width: 50vw;
-    margin: 0 auto;
+    margin: 0 auto 150px auto;
   }
 `;
 
@@ -103,7 +103,7 @@ const DivOdd = styled.div`
   }
 
   @media screen and (min-width: 1201px) {
-    margin-bottom: -100px;
+    margin-top: -100px;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
@@ -141,7 +141,7 @@ const DivEven = styled.div`
   }
 
   @media screen and (min-width: 1201px) {
-    margin-bottom: -100px;
+    margin-top: -100px;
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
@@ -182,6 +182,6 @@ const BottomLine = styled.div`
   background: black;
   margin: 0 auto;
   position: absolute;
-  bottom: 0;
+  bottom: -0;
   left: 50%;
 `;

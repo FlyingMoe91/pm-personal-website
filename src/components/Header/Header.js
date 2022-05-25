@@ -21,12 +21,12 @@ export default function Header() {
 }
 
 const HeaderWrapper = styled.header`
-  background: url(${headerPic}) 20% 48% no-repeat;
-  background-size: cover;
+  background: url(${headerPic}) 15% 50% no-repeat;
+  background-size: auto;
   height: 100vh;
 
   @media screen and (min-width: 1024px) {
-    background-size: 50% 100%;
+    background-size: auto;
     background-position: left top;
   }
 `;
