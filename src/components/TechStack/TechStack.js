@@ -47,12 +47,20 @@ const SkillsWrapper = styled.section`
   position: relative;
   text-align: center;
   text-transform: uppercase;
-  padding: 40px;
-  height: 450px;
-  scroll-snap-align: center;
+  padding: 50px;
 
   img {
     width: 40px;
+  }
+
+  @media screen and (min-width: 769px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 1025px) {
+    img {
+      width: 80px;
+    }
   }
 `;
 

@@ -11,8 +11,8 @@ export default function Intro() {
             old <span>junior</span> <span>frontend</span> <span>developer</span>{' '}
             from Berlin, Germany. A year ago I started teaching myself web
             development with online courses and websites for about half a year
-            and continued with a three month
-            <span>bootcamp</span> <span>at</span>{' '}
+            and continued with a three month <span>bootcamp</span>{' '}
+            <span>at</span>{' '}
             <a
               target="_blank"
               rel="noreferrer"
@@ -36,9 +36,7 @@ const Wrapper = styled.section`
   height: 90vh;
   padding-bottom: 0;
   color: #313035;
-  text-align: center;
   line-height: 1.5rem;
-  scroll-snap-align: center;
 
   @media screen and (max-width: 481px) {
     height: 100vh;
@@ -93,15 +91,17 @@ const IntroText = styled.div`
   width: 70vw;
   font-size: 1rem;
   font-weight: 300;
-  text-align: left;
+  text-align: justify;
 
   @media screen and (min-width: 480px) {
     width: 50vw;
+    font-size: 1.3rem;
     line-height: 2rem;
   }
 
-  @media screen and (min-width: 1025px) {
-    font-size: 1.3rem;
+  @media screen and (min-width: 1200px) {
+    font-size: 2rem;
+    line-height: 3rem;
   }
 `;
 
@@ -110,6 +110,7 @@ const IntroImage = styled.img`
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: 0%;
   filter: grayscale(70%);
   transition: 0.8s;
 
@@ -121,7 +122,7 @@ const IntroImage = styled.img`
 
 const Line = styled.div`
   width: 1px;
-  height: 10vh;
+  height: 7vh;
   background: black;
   margin: 0 auto;
   position: absolute;

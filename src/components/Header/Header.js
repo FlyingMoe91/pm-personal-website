@@ -24,7 +24,6 @@ const HeaderWrapper = styled.header`
   background: url(${headerPic}) 20% 48% no-repeat;
   background-size: cover;
   height: 100vh;
-  scroll-snap-align: center;
 
   @media screen and (min-width: 1024px) {
     background-size: 50% 100%;
@@ -38,9 +37,8 @@ const HeaderContent = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
-  gap: 10vh;
+  gap: 15vh;
   padding: 5vw;
 
   @media screen and (min-width: 1024px) {
@@ -60,6 +58,7 @@ const Headline = styled.h1`
   @media screen and (min-width: 1024px) {
     font-size: 4vw;
     width: 80%;
+    text-justify: center;
   }
 `;
 

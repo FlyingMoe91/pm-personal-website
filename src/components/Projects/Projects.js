@@ -13,7 +13,7 @@ export default function Projects() {
       <ProjectList>
         <li>
           <ProjectSlide id="projects">
-            <ProjectName>my projects</ProjectName>
+            <h2>MY PROJECTS</h2>
             <ProjectBackground>
               <p>LogBuddy</p>
               <p>another project</p>
@@ -46,13 +46,16 @@ const ProjectsWrapper = styled.section`
   text-align: center;
   height: 100vh;
   overflow-x: scroll;
-  scroll-snap-align: center;
   line-height: 1.5rem;
   font-weight: 300;
   scrollbar-width: none; /*for firefox on windows */
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  @media screen and (min-width: 769px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -85,12 +88,6 @@ const ProjectSlide = styled.div`
   justify-content: center;
   align-items: center;
   gap: 5vh;
-`;
-
-const ProjectName = styled.h2`
-  color: #de3612;
-  font-size: 2rem;
-  text-transform: uppercase;
 `;
 
 const ProjectBackground = styled.div`
