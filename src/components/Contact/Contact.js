@@ -2,6 +2,8 @@ import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import styled from 'styled-components';
 
+import { FaRegSmileWink as Smiley } from 'react-icons/fa';
+
 export default function Contact() {
   const [values, setValues] = useState({
     name: '',
@@ -10,15 +12,22 @@ export default function Contact() {
     subject: 'We want you!',
     message: `Hey Patrick,
     \nYour page looks great and it seems like you are an awesome guy!
-We really need someone like you in our team. YOU ARE HIRED!
-We are looking forward to hear from you to talk about the details.
-    \nCheers mate`,
+We really need someone like you in our team. 
+\n      YOU ARE HIRED!
+    \nWe are looking forward to hear from you to talk about the details.
+    \n\nCheers mate`,
   });
 
   return (
-    <>
-      <ContactHeadline id='contact'>CONTACT</ContactHeadline>
-      <Form onSubmit={handleSubmit}>
+    <Wrapper>
+      <h2 id='contact'>CONTACT</h2>
+      <p>Wanna get in touch?</p>{' '}
+      <p>
+        Just fill in your name, your email and press 'send email'. I took care
+        of the rest. Of course you can edit the inputs...but I think we know
+        that wont be necessary. <Smiley />
+      </p>
+      <Form id='form' onSubmit={handleSubmit}>
         <label htmlFor='name'>name</label>
         <input
           type='text'
@@ -34,7 +43,6 @@ We are looking forward to hear from you to talk about the details.
           name='company'
           id='company'
           onChange={handleChange}
-          required
           placeholder='name of your company'
         />
         <label htmlFor='email'>email</label>
@@ -53,6 +61,7 @@ We are looking forward to hear from you to talk about the details.
           id='subject'
           onChange={handleChange}
           required
+          placeholder='reason for your message'
           defaultValue={values.subject}
         />
         <label htmlFor='message'>message</label>
@@ -63,11 +72,13 @@ We are looking forward to hear from you to talk about the details.
           rows='15'
           onChange={handleChange}
           required
+          placeholder='Hey Patrick, ....'
           defaultValue={values.message}
         />
+        <ResetButton onClick={handleResetForm}>reset form</ResetButton>
         <SubmitButton>send email</SubmitButton>
       </Form>
-    </>
+    </Wrapper>
   );
 
   function handleSubmit(event) {
@@ -88,25 +99,43 @@ We are looking forward to hear from you to talk about the details.
       name: '',
       company: '',
       email: '',
-      subject: 'We want you!',
-      message: `Hey Patrick,
-        \nYour page looks great and it seems like you are an awesome guy!
-    We really need someone like you in our team. YOU ARE HIRED!
-    We are looking forward to hear from you to talk about the details.
-        \nCheers mate`,
+      subject: '',
+      message: '',
     });
+    event.target.reset();
   }
 
   function handleChange(event) {
     setValues({ ...values, [event.target.name]: event.target.value });
   }
+
+  function handleResetForm(event) {
+    event.preventDefault();
+    const name = document.getElementById('name');
+    const company = document.getElementById('company');
+    const email = document.getElementById('email');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
+    name.value = '';
+    company.value = '';
+    email.value = '';
+    subject.value = '';
+    message.value = '';
+  }
 }
 
-const ContactHeadline = styled.h2`
+const Wrapper = styled.section`
   text-align: center;
   color: #313035;
+  margin: 0 auto;
+
+  p {
+    font-weight: 300;
+  }
 
   @media screen and (min-width: 769px) {
+    font-size: 1.5rem;
+    width: 800px;
   }
 `;
 
@@ -116,10 +145,7 @@ const Form = styled.form`
   margin: 20px;
   font-weight: 300;
   line-height: 2rem;
-
-  p {
-    width: 300px;
-  }
+  text-align: left;
 
   input {
     font-size: inherit;
@@ -154,10 +180,20 @@ const SubmitButton = styled.button`
   font-size: 1rem;
   background-color: hotpink;
   color: #313035;
+  cursor: pointer;
   transition: 0.5s;
 
   :hover {
-    background-color: greenyellow;
-    color: white;
+    background-color: lightgreen;
   }
+`;
+
+const ResetButton = styled.button`
+  width: 100px;
+  align-self: flex-end;
+  cursor: pointer;
+  background-color: transparent;
+  color: hotpink;
+  border: 1px solid #313035;
+  border-radius: 5px;
 `;
