@@ -3,7 +3,7 @@ import IntroPic from '../../images/intro-pic.png';
 
 export default function Intro() {
   return (
-    <Wrapper id="intro">
+    <Wrapper id='intro'>
       <IntroMain>
         <IntroText>
           <p>
@@ -14,9 +14,9 @@ export default function Intro() {
             and continued with a three month <span>bootcamp</span>{' '}
             <span>at</span>{' '}
             <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.neuefische.de/"
+              target='_blank'
+              rel='noreferrer'
+              href='https://www.neuefische.de/'
             >
               <span>neuefische</span>
             </a>
@@ -24,7 +24,7 @@ export default function Intro() {
             make my next steps.
           </p>
         </IntroText>
-        <IntroImage src={IntroPic} alt="myself" />
+        <IntroImage src={IntroPic} alt='myself' />
       </IntroMain>
       <Line />
     </Wrapper>
@@ -89,7 +89,6 @@ const IntroMain = styled.div`
 
 const IntroText = styled.div`
   width: 70vw;
-  font-size: 1rem;
   font-weight: 300;
   text-align: justify;
 
