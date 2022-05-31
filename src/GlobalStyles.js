@@ -7,6 +7,10 @@ export default createGlobalStyle`
   font-family: 'Work Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;

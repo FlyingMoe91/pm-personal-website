@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import headerPic from '../../images/header-pic.png';
 import Logbuddy from './Logbuddy';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
@@ -12,7 +11,7 @@ export default function Projects() {
       <TopLine />
       <ProjectList>
         <li>
-          <ProjectSlide id="projects">
+          <ProjectSlide id='projects'>
             <h2>MY PROJECTS</h2>
             <ProjectBackground>
               <p>LogBuddy</p>
@@ -21,13 +20,13 @@ export default function Projects() {
               <HorizontalWalkthroughDiv>
                 <HorizontalLine />
                 <p>Horizontan Walkthrough</p>
-                <a href="#logbuddy">
+                <a href='#logbuddy'>
                   <ArrowIcon />
                   <ScreenReaderOnly>next project</ScreenReaderOnly>{' '}
                 </a>
               </HorizontalWalkthroughDiv>
             </ProjectBackground>
-            <NextProject href="#logbuddy">
+            <NextProject href='#logbuddy'>
               <ScreenReaderOnly>next project</ScreenReaderOnly>{' '}
             </NextProject>
           </ProjectSlide>
@@ -91,10 +90,6 @@ const ProjectSlide = styled.div`
 `;
 
 const ProjectBackground = styled.div`
-  background: url(${headerPic}) 20% 48% no-repeat;
-  background-size: cover;
-  filter: grayscale(50%);
-  color: white;
   width: 70%;
   height: 50%;
   position: relative;
@@ -115,13 +110,12 @@ const HorizontalWalkthroughDiv = styled.div`
 const HorizontalLine = styled.div`
   width: 40vw;
   height: 1px;
-  background: white;
+  background: black;
   margin: 0 auto;
 `;
 
 const ArrowIcon = styled(HiOutlineArrowNarrowRight)`
   font-size: 1.5rem;
-  color: white;
 `;
 
 const NextProject = styled.a`

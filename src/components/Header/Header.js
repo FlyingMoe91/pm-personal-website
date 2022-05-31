@@ -12,7 +12,7 @@ export default function Header() {
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
         </Headline>
       </HeaderContent>
-      <AboutMeArrow href="#intro">
+      <AboutMeArrow href='#intro'>
         intro
         <ArrowIcon />
       </AboutMeArrow>
@@ -63,22 +63,23 @@ const Headline = styled.h1`
 `;
 
 const AboutMeArrow = styled.a`
+  width: 80px;
   border: none;
   background: transparent;
   position: absolute;
   right: -15px;
   bottom: 60px;
-  color: white;
+  color: lightgrey;
   transform: rotate(90deg);
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  transition: 0.8s;
   cursor: pointer;
 
-  @media screen and (min-width: 1024px) {
-    right: 50%;
+  @media screen and (min-width: 960px) {
+    left: 900px;
+    right: 0;
   }
 `;
 
