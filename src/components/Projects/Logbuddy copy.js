@@ -3,15 +3,14 @@ import styled from 'styled-components';
 
 import LogbuddyMobile from '../../images/logbuddy.png';
 
-export default function Logbuddy() {
+export default function Logbuddy2() {
   return (
-    <ProjectSlide id='logbuddy'>
+    <ProjectSlide id='logbuddy2'>
       <SlideHeader>
         <ProjectName>LogBuddy</ProjectName>
         <LogbuddyImageMobile src={LogbuddyMobile} alt='logbuddy app' />
       </SlideHeader>
       <SlideMain>
-        <button>about logbuddy</button>
         {/* <div>
           <a
             target='_blank'
@@ -49,9 +48,8 @@ export default function Logbuddy() {
 const ProjectSlide = styled.div`
   position: relative;
   background-color: #00687e;
-  border-radius: 20px;
-  width: 300px;
-  height: 300px;
+  width: 70%;
+  height: 100%;
 `;
 
 const SlideHeader = styled.div`
@@ -88,15 +86,6 @@ const SlideMain = styled.div`
 
   div {
     margin: 0 auto;
-  }
-
-  button {
-    width: 100px;
-    margin: 0 auto;
-    border: none;
-    background: transparent;
-    color: hotpink;
-    cursor: pointer;
   }
 
   a {
