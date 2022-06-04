@@ -4,8 +4,6 @@ import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 import { BsCaretRightFill as ArrowRight, BsCircle } from 'react-icons/bs';
 import Logbuddy2 from './Logbuddy copy';
 
-// import { RiArrowRightSLine as ArrowRight } from 'react-icons/ri';
-
 export default function Projects() {
   return (
     <ProjectsWrapper id='projects'>
@@ -88,7 +86,7 @@ const NextProject = styled.a`
   position: absolute;
   top: 45%;
   right: 0;
-  z-index: 900;
+  z-index: 200;
   font-size: 4rem;
   color: black;
 `;

@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 // import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
 import LogbuddyMobile from '../../images/logbuddy.png';
+import ProjectModal from './Modal';
 
 export default function Logbuddy() {
+  const [projectModalActive, setProjectModalActive] = useState(false);
+
   return (
     <ProjectSlide id='logbuddy'>
       <SlideHeader>
@@ -11,7 +15,7 @@ export default function Logbuddy() {
         <LogbuddyImageMobile src={LogbuddyMobile} alt='logbuddy app' />
       </SlideHeader>
       <SlideMain>
-        <button>about logbuddy</button>
+        <button onClick={handleProjectModal}>about logbuddy</button>
         {/* <div>
           <a
             target='_blank'
@@ -42,8 +46,18 @@ export default function Logbuddy() {
           </p>
         </div> */}
       </SlideMain>
+      {projectModalActive && <ProjectModal onClose={handleProjectModal} />}
     </ProjectSlide>
   );
+  function handleProjectModal() {
+    setProjectModalActive(!projectModalActive);
+
+    if (!projectModalActive) {
+      document.querySelector('body').style.overflow = 'hidden';
+    } else {
+      document.querySelector('body').style.overflow = 'auto';
+    }
+  }
 }
 
 const ProjectSlide = styled.div`
