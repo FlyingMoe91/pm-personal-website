@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import FarmPic from '../../images/Farm.png';
-import twentyOneMT from '../../images/21MT.png';
-import DM from '../../images/DM.png';
-import WDW from '../../images/wdw.png';
+import FarmPic from '../../images/past/Farm.png';
+import twentyOneMT from '../../images/past/21MT.png';
+import DM from '../../images/past/DM.png';
+import WDW from '../../images/past/wdw.png';
 export default function About() {
   return (
     <Wrapper>
@@ -16,7 +16,7 @@ export default function About() {
       </DescriptionPast>
       <JobContainer>
         <DivOdd>
-          <JobImages src={FarmPic} alt="myself on a farm" />
+          <JobImages src={FarmPic} alt='myself on a farm' />
           <p>
             Using the break to hide from the sun under a massive tree on a
             vinyard in South Australia.
@@ -24,10 +24,10 @@ export default function About() {
         </DivOdd>
         <DivEven>
           <p>Searching for the way out of an underground maze in Sydney.</p>
-          <JobImages src={twentyOneMT} alt="myself underground" />
+          <JobImages src={twentyOneMT} alt='myself underground' />
         </DivEven>
         <DivOdd>
-          <JobImages src={DM} alt="myself as divemaster" />
+          <JobImages src={DM} alt='myself as divemaster' />
           <p>Just me beeing aquaman and trying to breath under water.</p>
         </DivOdd>
         <DivEven>
@@ -35,7 +35,7 @@ export default function About() {
             Beeing a happy young man at the happiest place on earth. World
             Disney World!
           </p>
-          <JobImages src={WDW} alt="myself working at world disney world" />
+          <JobImages src={WDW} alt='myself working at world disney world' />
         </DivEven>
       </JobContainer>
       <BottomLine />

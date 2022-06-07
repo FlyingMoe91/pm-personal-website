@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
-import LogbuddyMobile from '../../images/logbuddy.png';
+import LogbuddyMobile from '../../images/projects/logbuddy/logbuddy.png';
 
 export default function Logbuddy2() {
   return (

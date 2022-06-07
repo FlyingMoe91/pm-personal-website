@@ -2,11 +2,39 @@ import { useState } from 'react';
 import styled from 'styled-components';
 // import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
-import LogbuddyMobile from '../../images/logbuddy.png';
+import LogbuddyMobile from '../../images/projects/logbuddy/Logbuddy_desktop.png';
 import ProjectModal from './Modal';
+import logbuddy_home from '../../images/projects/logbuddy/Logbuddy_home.png';
+import logbuddy_dives from '../../images/projects/logbuddy/Logbuddy_dives.png';
+import logbuddy_certs from '../../images/projects/logbuddy/Logbuddy_certs.png';
+import logbuddy_map from '../../images/projects/logbuddy/Logbuddy_map.png';
 
 export default function Logbuddy() {
   const [projectModalActive, setProjectModalActive] = useState(false);
+
+  const logbuddyInfos = [
+    {
+      projectTitle: 'LogBuddy',
+      pic1: logbuddy_home,
+      pic1description: 'logbuddy homescreen',
+      pic2: logbuddy_dives,
+      pic2description: 'logbuddy dives',
+      pic3: logbuddy_certs,
+      pic3description: 'logbuddy certifications',
+      pic4: logbuddy_map,
+      pic4description: 'logbuddy map',
+      github_link: 'https://github.com/FlyingMoe91/capstone-project',
+      vercel_link: 'https://logbuddy.vercel.app/',
+      intro:
+        'LogBuddy is my capstone project which I was doing in the last four weeks of my bootcamp at neuefische.',
+      description1:
+        'It is a musthave for every passionate or professional diver and bubblemaker. It connects the underwater experience to the phone.',
+      description2:
+        ' Keeping track of dives, divespots or photos made easy. With Logbuddy all important information are quickly accessible and always in your pocket with you.',
+      techstack:
+        'Tech stack: React, React Router, React Testing Library, Storybook, Styled Components, Cloudinary, Leaflet, Mapbox, Axios, Vercel',
+    },
+  ];
 
   return (
     <ProjectSlide id='logbuddy'>
@@ -16,37 +44,14 @@ export default function Logbuddy() {
       </SlideHeader>
       <SlideMain>
         <button onClick={handleProjectModal}>about logbuddy</button>
-        {/* <div>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://github.com/FlyingMoe91/capstone-project'
-          >
-            LogBuddy Repository
-          </a>
-          <a
-            target='_blank'
-            rel='noreferrer'
-            href='https://logbuddy.vercel.app/'
-          >
-            LogBuddy Mobile-App
-          </a>
-        </div> */}
-        {/* <div>
-          <p>
-            LogBuddy is my capstone project which I was doing in the last four
-            weeks of my bootcamp at neuefische.
-          </p>
-          <p>
-            It is a musthave for every passionate or professional diver and
-            bubblemaker. It connects the underwater experience to the phone.
-            Keeping track of dives, divespots or photos made easy. With Logbuddy
-            all important information are quickly accessible and always in your
-            pocket with you.
-          </p>
-        </div> */}
       </SlideMain>
-      {projectModalActive && <ProjectModal onClose={handleProjectModal} />}
+      {projectModalActive && (
+        <ProjectModal
+          onClose={handleProjectModal}
+          ProjectTitle='Logbuddy'
+          logbuddyInfos={logbuddyInfos}
+        />
+      )}
     </ProjectSlide>
   );
   function handleProjectModal() {
@@ -100,29 +105,13 @@ const SlideMain = styled.div`
   flex-direction: column;
   gap: 5vh;
 
-  div {
-    margin: 0 auto;
-  }
-
   button {
-    width: 100px;
+    width: 150px;
     margin: 0 auto;
     border: none;
     background: transparent;
     color: hotpink;
     cursor: pointer;
-  }
-
-  a {
-    display: block;
-    width: 50vw;
-    color: #00687e;
-  }
-
-  p {
-    font-size: 0.8rem;
-    font-weight: 300;
-    color: #00687e;
   }
 
   @media screen and (min-width: 769px) {
