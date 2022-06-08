@@ -19,8 +19,8 @@ We really need someone like you in our team.
   });
 
   return (
-    <Wrapper>
-      <h2 id='contact'>CONTACT</h2>
+    <Wrapper id='contact'>
+      <h2>CONTACT</h2>
       <p>Wanna get in touch?</p>{' '}
       <p>
         Just fill in your name, your email and press 'send email'. I took care

@@ -16,6 +16,7 @@ export default function Header() {
         intro
         <ArrowIcon />
       </AboutMeArrow>
+      <ToContact href='#contact'>I want this guy already!</ToContact>
     </HeaderWrapper>
   );
 }
@@ -59,6 +60,30 @@ const Headline = styled.h1`
     font-size: 4vw;
     width: 80%;
     text-justify: center;
+  }
+`;
+
+const ToContact = styled.a`
+  background-color: hotpink;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px;
+  position: absolute;
+  bottom: 5vh;
+  left: 10vw;
+
+  @media screen and (min-width: 480px) {
+    font-size: 1.5rem;
+    bottom: 5vh;
+    left: 20vw;
+  }
+
+  @media screen and (min-width: 480px) {
+    font-size: 2rem;
+    bottom: 5vh;
+    left: 20vw;
   }
 `;
 

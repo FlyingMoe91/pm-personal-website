@@ -23,6 +23,7 @@ export default function Intro() {
             . I'm still at the beginning of my new journey, but I can't wait to
             make my next steps.
           </p>
+          <ToContact href='#contact'>No more words needed!</ToContact>
         </IntroText>
         <IntroImage src={IntroPic} alt='myself' />
       </IntroMain>
@@ -63,6 +64,10 @@ const IntroMain = styled.div`
   align-items: center;
   margin: 20px 0;
 
+  a {
+    text-decoration: none;
+  }
+
   span {
     position: relative;
     z-index: 1;
@@ -102,6 +107,14 @@ const IntroText = styled.div`
     font-size: 2rem;
     line-height: 3rem;
   }
+`;
+
+const ToContact = styled.a`
+  background-color: hotpink;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 600;
 `;
 
 const IntroImage = styled.img`
