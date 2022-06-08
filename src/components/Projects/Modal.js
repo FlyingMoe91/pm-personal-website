@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { GrFormClose } from 'react-icons/gr';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
-export default function ProjectModal({ onClose, logbuddyInfos }) {
+export default function ProjectModal({ onClose, logbuddyInfos, bgColor }) {
   return (
     <Background>
       {logbuddyInfos.map(
@@ -23,7 +23,7 @@ export default function ProjectModal({ onClose, logbuddyInfos }) {
           description2,
           techstack,
         }) => (
-          <ModalContent key={projectTitle}>
+          <ModalContent key={projectTitle} bgColor={bgColor}>
             <ButtonClose onClick={onClose}>
               <GrFormClose />
               <ScreenReaderOnly>close</ScreenReaderOnly>
@@ -73,7 +73,7 @@ const ModalContent = styled.div`
   background-color: white;
   overflow: scroll;
   padding: 10px;
-  background-color: #00687e;
+  background-color: ${(props) => props.bgColor};
   color: white;
 `;
 

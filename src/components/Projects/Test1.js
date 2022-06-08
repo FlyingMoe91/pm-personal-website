@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+// import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
 import LogbuddyMobile from '../../images/projects/logbuddy/Logbuddy_desktop.png';
 import ProjectModal from './Modal';
@@ -36,9 +37,9 @@ export default function Logbuddy() {
   ];
 
   return (
-    <ProjectSlide id='logbuddy'>
+    <ProjectSlide id='test1'>
       <div>
-        <ProjectName>LogBuddy</ProjectName>
+        <ProjectName>TEST1</ProjectName>
         <AboutButton onClick={handleProjectModal}>about this app</AboutButton>
       </div>
       <LogbuddyImageMobile src={LogbuddyMobile} alt='logbuddy app' />
@@ -66,7 +67,7 @@ export default function Logbuddy() {
 
 const ProjectSlide = styled.div`
   position: relative;
-  background-color: #00687e;
+  background-color: lightcoral;
   border-radius: 20px;
   width: 80vw;
   height: 80vw;
