@@ -38,13 +38,11 @@ export default function Logbuddy() {
 
   return (
     <ProjectSlide id='logbuddy'>
-      <SlideHeader>
+      <div>
         <ProjectName>LogBuddy</ProjectName>
-        <LogbuddyImageMobile src={LogbuddyMobile} alt='logbuddy app' />
-      </SlideHeader>
-      <SlideMain>
-        <button onClick={handleProjectModal}>about logbuddy</button>
-      </SlideMain>
+        <AboutButton onClick={handleProjectModal}>about this app</AboutButton>
+      </div>
+      <LogbuddyImageMobile src={LogbuddyMobile} alt='logbuddy app' />
       {projectModalActive && (
         <ProjectModal
           onClose={handleProjectModal}
@@ -54,6 +52,7 @@ export default function Logbuddy() {
       )}
     </ProjectSlide>
   );
+
   function handleProjectModal() {
     setProjectModalActive(!projectModalActive);
 
@@ -69,26 +68,28 @@ const ProjectSlide = styled.div`
   position: relative;
   background-color: #00687e;
   border-radius: 20px;
-  width: 300px;
-  height: 300px;
-`;
-
-const SlideHeader = styled.div`
-  width: 100%;
-  margin: 20px 0;
+  width: 80vw;
+  height: 80vw;
+  max-height: 510px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5vw;
 
   @media screen and (min-width: 1025px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5vw;
-    margin: 10vh 0;
+    flex-direction: row;
   }
 `;
 
 const ProjectName = styled.h2`
   color: white;
   font-size: 2rem;
+  margin: 0;
+
+  @media screen and (min-width: 769px) {
+    font-size: 3rem;
+  }
 `;
 
 const LogbuddyImageMobile = styled.img`
@@ -96,47 +97,19 @@ const LogbuddyImageMobile = styled.img`
     width: 70vw;
   }
   @media screen and (min-width: 1025px) {
-    width: 40vw;
+    width: 50vw;
   }
 `;
 
-const SlideMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5vh;
-
-  button {
-    width: 150px;
-    margin: 0 auto;
-    border: none;
-    background: transparent;
-    color: hotpink;
-    cursor: pointer;
-  }
+const AboutButton = styled.button`
+  width: 100%;
+  margin-top: 20px;
+  border: none;
+  background: transparent;
+  color: hotpink;
+  cursor: pointer;
 
   @media screen and (min-width: 769px) {
-    flex-direction: row;
-    justify-content: center;
-
-    div {
-      margin: 0;
-    }
-
-    a {
-      width: 250px;
-      margin: 5vh 0;
-    }
-
-    p {
-      margin: 5vh 0;
-      text-align: left;
-      font-size: 1.3rem;
-      line-height: 2rem;
-      width: 55vw;
-
-      @media screen and (max-height: 766px) {
-        font-size: 1rem;
-      }
-    }
+    font-size: 1.3rem;
   }
 `;

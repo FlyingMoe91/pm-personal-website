@@ -23,7 +23,7 @@ export default function ProjectModal({ onClose, logbuddyInfos }) {
           description2,
           techstack,
         }) => (
-          <ModalContent>
+          <ModalContent key={projectTitle}>
             <ButtonClose onClick={onClose}>
               <GrFormClose />
               <ScreenReaderOnly>close</ScreenReaderOnly>
@@ -105,6 +105,7 @@ const ButtonClose = styled.button`
   height: 35px;
   background: transparent;
   border: 0;
+  cursor: pointer;
 `;
 
 const Screenshots = styled.img`
