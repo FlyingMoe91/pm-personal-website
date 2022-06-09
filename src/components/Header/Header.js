@@ -6,11 +6,11 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 export default function Header() {
   return (
     <HeaderWrapper>
+      <NavBar />
       <HeaderContent>
-        <NavBar />
-        <Headline>
+        <HeaderText>
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
-        </Headline>
+        </HeaderText>
       </HeaderContent>
       <AboutMeArrow href='#intro'>
         intro
@@ -26,7 +26,7 @@ const HeaderWrapper = styled.header`
   background-size: auto;
   height: 100vh;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 960px) {
     background-size: auto;
     background-position: left top;
   }
@@ -35,31 +35,38 @@ const HeaderWrapper = styled.header`
 const HeaderContent = styled.div`
   float: right;
   width: 70%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15vh;
-  padding: 5vw;
+  padding: 10px;
+  margin-top: 120px;
 
   @media screen and (min-width: 1024px) {
     width: 50%;
-    padding: 2vw;
   }
 `;
 
-const Headline = styled.h1`
+const HeaderText = styled.h1`
   background-color: white;
-  font-size: 6vw;
+  font-size: 1.5rem;
   text-align: center;
   color: #de3612;
   padding: 20px;
+  margin: auto;
   transition: 0.8s;
 
-  @media screen and (min-width: 1024px) {
-    font-size: 4vw;
+  @media screen and (min-width: 769px) {
+    font-size: 2.5rem;
     width: 80%;
-    text-justify: center;
+  }
+
+  @media screen and (min-width: 1025px) {
+    font-size: 3rem;
+  }
+
+  @media screen and (min-width: 1201px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (min-width: 1700px) {
+    margin-top: 60px;
   }
 `;
 
@@ -74,16 +81,21 @@ const ToContact = styled.a`
   bottom: 5vh;
   left: 10vw;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 481px) {
     font-size: 1.5rem;
     bottom: 5vh;
     left: 20vw;
   }
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 769px) {
     font-size: 2rem;
     bottom: 5vh;
-    left: 20vw;
+    left: 25vw;
+  }
+
+  @media screen and (min-width: 960px) {
+    bottom: 5vh;
+    left: 320px;
   }
 `;
 

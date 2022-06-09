@@ -9,20 +9,20 @@ export default function NavBar() {
   return (
     <Nav>
       <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/FlyingMoe91"
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://github.com/FlyingMoe91'
       >
         <GithubIcon />
       </a>
       <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://www.linkedin.com/in/patrick-müller-94a668239/"
+        target='_blank'
+        rel='noopener noreferrer'
+        href='https://www.linkedin.com/in/patrick-müller-94a668239/'
       >
         <LinkedInIcon />
       </a>
-      <a href="mailto:p.moe.mueller@gmail.com">
+      <a href='mailto:p.moe.mueller@gmail.com'>
         <MailIcon />
       </a>
     </Nav>
@@ -30,14 +30,19 @@ export default function NavBar() {
 }
 
 const Nav = styled.nav`
-  a {
-    text-decoration: none;
-    color: white;
-    margin: 4vw;
-    font-size: 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  font-size: 3rem;
+  padding: 20px;
 
-    @media screen and (min-width: 1024px) {
-      color: lightgrey;
-    }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 960px) {
+    width: 960px;
+    font-size: 4rem;
   }
 `;
