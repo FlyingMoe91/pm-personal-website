@@ -21,21 +21,21 @@ export default function Bootcamp() {
       <TopLine />
       <h2>my tech stack</h2>
       <IconBox>
-        <img src={HTML5} alt="html5" />
-        <img src={CSS3} alt="css3" />
-        <img src={JS} alt="javascript" />
-        <img src={React} alt="react" />
-        <img src={Jest} alt="jest" />
-        <img src={Git} alt="git" />
-        <img src={Github} alt="github" />
-        <img src={VSC} alt="visual studio code" />
-        <img src={SB} alt="storybook" />
-        <img src={ESLint} alt="eslint" />
-        <img src={Nodejs} alt="nodejs" />
-        <img src={MongoDB} alt="mongoDB" />
-        <img src={Bootstrap} alt="bootstrap" />
-        <img src={CodePen} alt="codepen" />
-        <img src={Figma} alt="figma" />
+        <img src={HTML5} alt='html5' />
+        <img src={CSS3} alt='css3' />
+        <img src={JS} alt='javascript' />
+        <img src={React} alt='react' />
+        <img src={Jest} alt='jest' />
+        <img src={Git} alt='git' />
+        <img src={Github} alt='github' />
+        <img src={VSC} alt='visual studio code' />
+        <img src={SB} alt='storybook' />
+        <img src={ESLint} alt='eslint' />
+        <img src={Nodejs} alt='nodejs' />
+        <img src={MongoDB} alt='mongoDB' />
+        <img src={Bootstrap} alt='bootstrap' />
+        <img src={CodePen} alt='codepen' />
+        <img src={Figma} alt='figma' />
       </IconBox>
       <BottomLine />
     </SkillsWrapper>
@@ -66,7 +66,7 @@ const SkillsWrapper = styled.section`
 
 const IconBox = styled.div`
   width: 60vw;
-  margin: 0 auto;
+  margin: 30px auto 30px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -78,7 +78,7 @@ const IconBox = styled.div`
 
 const TopLine = styled.div`
   width: 1px;
-  height: 6vh;
+  height: 5vh;
   background: black;
   margin: 0 auto;
   position: absolute;
@@ -88,7 +88,7 @@ const TopLine = styled.div`
 
 const BottomLine = styled.div`
   width: 1px;
-  height: 4vh;
+  height: 5vh;
   background: black;
   margin: 0 auto;
   position: absolute;

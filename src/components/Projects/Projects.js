@@ -76,9 +76,9 @@ export default function Projects() {
 const ProjectsWrapper = styled.section`
   position: relative;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   font-weight: 300;
-  padding: 30px 0;
+  padding: 30px 0 50px 0;
   display: flex;
   flex-direction: column;
   gap: 10vh;

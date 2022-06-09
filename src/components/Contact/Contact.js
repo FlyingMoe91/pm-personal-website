@@ -137,7 +137,7 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 769px) {
     font-size: 1.5rem;
-    width: 800px;
+    width: 70vw;
   }
 `;
 
@@ -164,7 +164,7 @@ const Form = styled.form`
 
   @media screen and (min-width: 480px) {
     font-size: 1.3rem;
-    width: 800px;
+    width: 90%;
     margin: 20px auto;
   }
 
