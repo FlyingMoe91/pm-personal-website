@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import IntroPic from '../../images/intro-pic.png';
+import ButtonToContact from '../ButtonsToContact/ButtonToContact';
+import { BsHandIndexThumb } from 'react-icons/bs';
 
 export default function Intro() {
   return (
@@ -23,7 +25,10 @@ export default function Intro() {
             . I'm still at the beginning of my new journey, but I can't wait to
             make my next steps.
           </p>
-          <ToContact href='#contact'>No more words needed!</ToContact>
+          <ButtonToContact href='#contact'>
+            No more words needed!
+            <IconHand />
+          </ButtonToContact>
         </IntroText>
         <IntroImage src={IntroPic} alt='myself' />
       </IntroMain>
@@ -106,12 +111,13 @@ const IntroText = styled.div`
   }
 `;
 
-const ToContact = styled.a`
-  background-color: hotpink;
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  font-weight: 600;
+const IconHand = styled(BsHandIndexThumb)`
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  color: grey;
+  font-size: 3rem;
+  transform: rotate(-35deg);
 `;
 
 const IntroImage = styled.img`
@@ -119,9 +125,7 @@ const IntroImage = styled.img`
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: 0%;
   filter: grayscale(70%);
-  transition: 0.8s;
 
   @media screen and (min-width: 1025px) {
     width: 300px;

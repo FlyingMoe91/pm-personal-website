@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import headerPic from '../../images/header-pic.png';
 import NavBar from '../NavBar/NavBar';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import ButtonToContact from '../ButtonsToContact/ButtonToContact';
+import { BsHandIndexThumb } from 'react-icons/bs';
 
 export default function Header() {
   return (
@@ -16,7 +18,9 @@ export default function Header() {
         intro
         <ArrowIcon />
       </AboutMeArrow>
-      <ToContact href='#contact'>I want this guy already!</ToContact>
+      <ToContact href='#contact'>
+        I want this guy already! <IconHand />
+      </ToContact>
     </HeaderWrapper>
   );
 }
@@ -75,13 +79,8 @@ const HeaderText = styled.h1`
   }
 `;
 
-const ToContact = styled.a`
-  background-color: hotpink;
-  color: white;
-  text-decoration: none;
+const ToContact = styled(ButtonToContact)`
   font-size: 1.2rem;
-  font-weight: 600;
-  padding: 10px;
   position: absolute;
   bottom: 5vh;
   left: 10vw;
@@ -102,6 +101,15 @@ const ToContact = styled.a`
     bottom: 5vh;
     left: 320px;
   }
+`;
+
+const IconHand = styled(BsHandIndexThumb)`
+  position: absolute;
+  right: -15px;
+  bottom: -15px;
+  color: white;
+  font-size: 3rem;
+  transform: rotate(-35deg);
 `;
 
 const AboutMeArrow = styled.a`
