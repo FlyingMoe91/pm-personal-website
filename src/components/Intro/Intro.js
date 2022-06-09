@@ -34,18 +34,15 @@ export default function Intro() {
 
 const Wrapper = styled.section`
   position: relative;
-  height: 90vh;
+  min-height: 100vh;
   padding-bottom: 0;
   color: #313035;
   line-height: 1.5rem;
-
-  @media screen and (max-width: 481px) {
-    height: 100vh;
-  }
+  display: flex;
+  align-items: center;
 
   @media screen and (min-width: 481px) {
     line-height: 2rem;
-    height: 60vh;
   }
 
   @media screen and (min-width: 1200px) {
@@ -54,15 +51,15 @@ const Wrapper = styled.section`
 `;
 
 const IntroMain = styled.div`
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0;
+  width: 100%;
+  margin: 30px 0;
+
+  p {
+    margin: 0 0 50px 0;
+  }
 
   a {
     text-decoration: none;
@@ -130,11 +127,16 @@ const IntroImage = styled.img`
     width: 300px;
     height: 300px;
   }
+
+  @media screen and (min-width: 1200px) {
+    width: 400px;
+    height: 400px;
+  }
 `;
 
 const Line = styled.div`
   width: 1px;
-  height: 7vh;
+  height: 5vh;
   background: black;
   margin: 0 auto;
   position: absolute;

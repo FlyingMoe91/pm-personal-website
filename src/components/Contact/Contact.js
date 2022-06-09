@@ -177,11 +177,10 @@ const SubmitButton = styled.button`
   width: 50%;
   margin: 20px auto;
   padding: 10px;
-  border: 1px solid #313035;
-  border-radius: 5px;
+  border: none;
   font-size: 1rem;
   background-color: hotpink;
-  color: #313035;
+  color: white;
   cursor: pointer;
   transition: 0.5s;
 
@@ -197,5 +196,4 @@ const ResetButton = styled.button`
   background-color: transparent;
   color: hotpink;
   border: 1px solid #313035;
-  border-radius: 5px;
 `;
