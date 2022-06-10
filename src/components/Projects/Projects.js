@@ -4,15 +4,32 @@ import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 import { BsCaretRightFill as Arrow, BsCircle } from 'react-icons/bs';
 import Logbuddy2 from './Test1';
 import TEST2 from './Test2';
+import { useEffect } from 'react';
 
 export default function Projects() {
-  //   if (window.addEventListener) {
-  //   window.addEventListener('resize', function () {
-  //     if (window.innerWidth < 400) {
-  //     } else {
-  //     }
-  //   });
-  // }
+  useEffect(() => {
+    const project = document.querySelector('#test1');
+    const ElementHeight = project.offsetHeight;
+    const ElementWidth = project.offsetWidth;
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= -ElementHeight &&
+        rect.left >= -ElementWidth &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) +
+            ElementHeight &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth) +
+            ElementWidth
+      );
+    }
+
+    document.addEventListener(('scroll', 'click', 'touchmove'), function () {
+      isInViewport(project) ? console.log('Inside') : console.log('Outside');
+    });
+  });
 
   return (
     <ProjectsWrapper id='projects'>
@@ -45,7 +62,7 @@ export default function Projects() {
         <Arrow />
         <ScreenReaderOnly>previous project</ScreenReaderOnly>
       </PreviousProject>
-      <NextProject href='#test1'>
+      <NextProject onClick={handleScrollRight}>
         <Arrow />
         <ScreenReaderOnly>next project</ScreenReaderOnly>
       </NextProject>
@@ -54,34 +71,23 @@ export default function Projects() {
 
   function handleScrollLeft() {
     const list = document.getElementById('ul');
-
-    if (window.innerWidth < 400) {
-      list.scrollBy(-400, 0);
-    } else {
-      list.scrollBy(-1000, 0);
-    }
+    list.scrollBy(-window.innerWidth, 0);
   }
 
-  // function handleScrollRight() {
-  //   const list = document.getElementById('ul');
-
-  //   if (window.innerWidth < 400) {
-  //     list.scrollBy(400, 0);
-  //   } else {
-  //     list.scrollBy(1000, 0);
-  //   }
-  // }
+  function handleScrollRight() {
+    const list = document.getElementById('ul');
+    list.scrollBy(window.innerWidth, 0);
+  }
 }
 
 const ProjectsWrapper = styled.section`
   position: relative;
   text-align: center;
-  min-height: 100vh;
   font-weight: 300;
   padding: 30px 0 50px 0;
   display: flex;
   flex-direction: column;
-  gap: 10vh;
+  gap: 10px;
 
   @media screen and (min-width: 769px) {
     font-size: 1.5rem;
@@ -104,12 +110,9 @@ const ProjectList = styled.ul`
 `;
 
 const ProjectSlide = styled.div`
-  position: relative;
   width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5vh;
+  justify-content: center;
 `;
 
 const ProjectNav = styled(BsCircle)`

@@ -116,7 +116,7 @@ const IconHand = styled(BsHandIndexThumb)`
   right: -15px;
   bottom: -15px;
   color: grey;
-  font-size: 3rem;
+  font-size: 2rem;
   transform: rotate(-35deg);
 `;
 

@@ -84,7 +84,7 @@ const ProjectSlide = styled.div`
 
 const ProjectName = styled.h2`
   color: white;
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin: 0;
 
   @media screen and (min-width: 769px) {
