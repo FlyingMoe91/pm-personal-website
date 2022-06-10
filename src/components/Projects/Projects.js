@@ -1,35 +1,58 @@
 import styled from 'styled-components';
 import Logbuddy from './Logbuddy';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
-import { BsCaretRightFill as Arrow, BsCircle } from 'react-icons/bs';
+import { BsCaretRightFill as Arrow, BsCircleFill } from 'react-icons/bs';
 import Logbuddy2 from './Test1';
 import TEST2 from './Test2';
 import { useEffect } from 'react';
 
 export default function Projects() {
   useEffect(() => {
-    const project = document.querySelector('#test1');
-    const ElementHeight = project.offsetHeight;
-    const ElementWidth = project.offsetWidth;
+    const project1 = document.querySelector('#logbuddy');
+    const project2 = document.querySelector('#test1');
+    const project3 = document.querySelector('#test2');
+    const elementHeight = project1.offsetHeight;
+    const elementWidth = project1.offsetWidth;
+    const project1Nav = document.querySelector('#project1Nav');
+    const project2Nav = document.querySelector('#project2Nav');
+    const project3Nav = document.querySelector('#project3Nav');
 
     function isInViewport(el) {
       const rect = el.getBoundingClientRect();
       return (
-        rect.top >= -ElementHeight &&
-        rect.left >= -ElementWidth &&
+        rect.top >= -elementHeight &&
+        rect.left >= -elementWidth &&
         rect.bottom <=
           (window.innerHeight || document.documentElement.clientHeight) +
-            ElementHeight &&
+            elementHeight &&
         rect.right <=
           (window.innerWidth || document.documentElement.clientWidth) +
-            ElementWidth
+            elementWidth
       );
     }
 
-    document.addEventListener(('scroll', 'click', 'touchmove'), function () {
-      isInViewport(project) ? console.log('Inside') : console.log('Outside');
+    document.addEventListener(('scroll', 'click'), function () {
+      if (isInViewport(project1)) {
+        return (
+          (project1Nav.style.color = 'black'),
+          (project2Nav.style.color = 'lightgrey'),
+          (project3Nav.style.color = 'lightgrey')
+        );
+      } else if (isInViewport(project2)) {
+        return (
+          (project1Nav.style.color = 'lightgrey'),
+          (project2Nav.style.color = 'black'),
+          (project3Nav.style.color = 'lightgrey')
+        );
+      } else if (isInViewport(project3)) {
+        return (
+          (project1Nav.style.color = 'lightgrey'),
+          (project2Nav.style.color = 'lightgrey'),
+          (project3Nav.style.color = 'black')
+        );
+      }
     });
-  });
+  }, []);
 
   return (
     <ProjectsWrapper id='projects'>
@@ -53,9 +76,9 @@ export default function Projects() {
         </li>
       </ProjectList>
       <div>
-        <ProjectNav />
-        <ProjectNav />
-        <ProjectNav />
+        <ProjectNav id='project1Nav' />
+        <ProjectNav id='project2Nav' />
+        <ProjectNav id='project3Nav' />
       </div>
       <BottomLine />
       <PreviousProject onClick={handleScrollLeft}>
@@ -115,8 +138,9 @@ const ProjectSlide = styled.div`
   justify-content: center;
 `;
 
-const ProjectNav = styled(BsCircle)`
+const ProjectNav = styled(BsCircleFill)`
   margin: 5px;
+  color: lightgrey;
 `;
 
 const NextProject = styled.a`
