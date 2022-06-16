@@ -45,8 +45,7 @@ export default function Logbuddy() {
       {projectModalActive && (
         <ProjectModal
           onClose={handleProjectModal}
-          ProjectTitle='Logbuddy'
-          logbuddyInfos={logbuddyInfos}
+          projectInfos={logbuddyInfos}
           bgColor='#00687e'
         />
       )}

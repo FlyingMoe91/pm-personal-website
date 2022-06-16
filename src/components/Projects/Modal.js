@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { GrFormClose } from 'react-icons/gr';
+import { BsFillXCircleFill } from 'react-icons/bs';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 
-export default function ProjectModal({ onClose, logbuddyInfos, bgColor }) {
+export default function ProjectModal({ onClose, projectInfos, bgColor }) {
   return (
     <Background>
-      {logbuddyInfos.map(
+      {projectInfos.map(
         ({
           projectTitle,
           pic1,
@@ -25,7 +25,7 @@ export default function ProjectModal({ onClose, logbuddyInfos, bgColor }) {
         }) => (
           <ModalContent key={projectTitle} bgColor={bgColor}>
             <ButtonClose onClick={onClose}>
-              <GrFormClose />
+              <CloseIcon />
               <ScreenReaderOnly>close</ScreenReaderOnly>
             </ButtonClose>
             <ProjectHeadline>{projectTitle}</ProjectHeadline>
@@ -34,10 +34,10 @@ export default function ProjectModal({ onClose, logbuddyInfos, bgColor }) {
               <div>
                 <p>{intro}</p>
                 <a target='_blank' rel='noreferrer' href={github_link}>
-                  LogBuddy Repository
+                  {projectTitle} Repository
                 </a>
                 <a target='_blank' rel='noreferrer' href={vercel_link}>
-                  LogBuddy Mobile-App
+                  {projectTitle} Mobile-App
                 </a>
               </div>
               <div>{description1}</div>
@@ -81,7 +81,7 @@ const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 
   a {
     display: block;
@@ -98,7 +98,7 @@ const ProjectHeadline = styled.h3`
 
 const ButtonClose = styled.button`
   position: fixed;
-  right: 15px;
+  left: 0px;
   top: 15px;
   font-size: 2rem;
   width: 35px;
@@ -106,6 +106,10 @@ const ButtonClose = styled.button`
   background: transparent;
   border: 0;
   cursor: pointer;
+`;
+
+const CloseIcon = styled(BsFillXCircleFill)`
+  color: white;
 `;
 
 const Screenshots = styled.img`

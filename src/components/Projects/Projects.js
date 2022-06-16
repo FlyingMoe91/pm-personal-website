@@ -1,10 +1,11 @@
-import styled from 'styled-components';
-import Logbuddy from './Logbuddy';
-import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
-import { BsCaretRightFill as Arrow, BsCircleFill } from 'react-icons/bs';
-import Logbuddy2 from './Test1';
-import TEST2 from './Test2';
 import { useEffect } from 'react';
+import styled from 'styled-components';
+import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
+import Logbuddy from './Logbuddy';
+import LeanCoffeeBoard from './LeanCoffeeBoard';
+import QuizzApp from './QuizzApp';
+import { BsCaretRightFill as Arrow, BsCircleFill } from 'react-icons/bs';
+import RockPaperScissors from './RockPaperScissors';
 
 export default function Projects() {
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Projects() {
       );
     }
 
-    document.addEventListener(('scroll', 'click'), function () {
+    document.addEventListener(('scroll', 'click', 'touchmove'), function () {
       if (isInViewport(project1)) {
         return (
           (project1Nav.style.color = 'black'),
@@ -52,7 +53,7 @@ export default function Projects() {
         );
       }
     });
-  }, []);
+  });
 
   return (
     <ProjectsWrapper id='projects'>
@@ -66,12 +67,17 @@ export default function Projects() {
         </li>
         <li>
           <ProjectSlide>
-            <Logbuddy2 />
+            <LeanCoffeeBoard />
           </ProjectSlide>
         </li>
         <li>
           <ProjectSlide>
-            <TEST2 />
+            <RockPaperScissors />
+          </ProjectSlide>
+        </li>
+        <li>
+          <ProjectSlide>
+            <QuizzApp />
           </ProjectSlide>
         </li>
       </ProjectList>
