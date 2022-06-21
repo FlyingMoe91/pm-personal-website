@@ -7,7 +7,6 @@ import WDW from '../../images/past/wdw.png';
 export default function About() {
   return (
     <Wrapper>
-      <TopLine />
       <h2>MORE ABOUT ME, MYSELF AND I</h2>
       <DescriptionPast>
         In the past years I've been everywhere and nowhere, working in big
@@ -38,7 +37,6 @@ export default function About() {
           <JobImages src={WDW} alt='myself working at world disney world' />
         </DivEven>
       </JobContainer>
-      <BottomLine />
     </Wrapper>
   );
 }
@@ -164,24 +162,4 @@ const JobImages = styled.img`
     width: 20%;
     height: 20%;
   }
-`;
-
-const TopLine = styled.div`
-  width: 1px;
-  height: 4vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-`;
-
-const BottomLine = styled.div`
-  width: 1px;
-  height: 4vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  bottom: -0;
-  left: 50%;
 `;

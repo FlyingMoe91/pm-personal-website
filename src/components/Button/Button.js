@@ -7,4 +7,5 @@ export default styled.a`
   text-decoration: none;
   padding: 10px;
   font-weight: 600;
+  cursor: pointer;
 `;

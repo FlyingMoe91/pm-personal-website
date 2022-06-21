@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import headerPic from '../../images/header-pic.png';
 import NavBar from '../NavBar/NavBar';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
-import ButtonToContact from '../ButtonsToContact/ButtonToContact';
+import ButtonToContact from '../Button/Button';
 import { BsHandIndexThumb } from 'react-icons/bs';
 
 export default function Header() {
@@ -56,7 +56,7 @@ const HeaderText = styled.h1`
   background-color: white;
   font-size: 1.5rem;
   text-align: center;
-  color: #de3612;
+  color: hotpink;
   padding: 20px;
   margin: auto;
   transition: 0.8s;

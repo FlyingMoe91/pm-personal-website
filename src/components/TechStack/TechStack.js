@@ -18,7 +18,6 @@ import Nodejs from './Icons/nodejs-original.svg';
 export default function Bootcamp() {
   return (
     <SkillsWrapper>
-      <TopLine />
       <h2>my tech stack</h2>
       <IconBox>
         <img src={HTML5} alt='html5' />
@@ -37,7 +36,6 @@ export default function Bootcamp() {
         <img src={CodePen} alt='codepen' />
         <img src={Figma} alt='figma' />
       </IconBox>
-      <BottomLine />
     </SkillsWrapper>
   );
 }
@@ -74,24 +72,4 @@ const IconBox = styled.div`
   img {
     margin: auto;
   }
-`;
-
-const TopLine = styled.div`
-  width: 1px;
-  height: 5vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-`;
-
-const BottomLine = styled.div`
-  width: 1px;
-  height: 5vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
 `;

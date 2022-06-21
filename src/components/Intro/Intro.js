@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import IntroPic from '../../images/intro-pic.png';
-import ButtonToContact from '../ButtonsToContact/ButtonToContact';
+import ButtonToContact from '../Button/Button';
 import { BsHandIndexThumb } from 'react-icons/bs';
 
 export default function Intro() {
@@ -32,7 +32,6 @@ export default function Intro() {
         </IntroText>
         <IntroImage src={IntroPic} alt='myself' />
       </IntroMain>
-      <Line />
     </Wrapper>
   );
 }
@@ -136,14 +135,4 @@ const IntroImage = styled.img`
     width: 400px;
     height: 400px;
   }
-`;
-
-const Line = styled.div`
-  width: 1px;
-  height: 5vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
 `;

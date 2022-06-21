@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Button from '../Button/Button';
 
 import ProjectModal from './Modal';
 
@@ -41,7 +42,6 @@ export default function LeanCoffeeBoard() {
         <ProjectModal
           onClose={handleProjectModal}
           projectInfos={leanCoffeeBoardInfos}
-          bgColor='lightblue'
         />
       )}
     </ProjectSlide>
@@ -60,8 +60,8 @@ export default function LeanCoffeeBoard() {
 
 const ProjectSlide = styled.div`
   position: relative;
-  background-color: lightblue;
-  border-radius: 20px;
+  background-color: #cdf2f2;
+  border-radius: 5px;
   width: 80vw;
   height: 80vw;
   max-height: 510px;
@@ -77,9 +77,7 @@ const ProjectSlide = styled.div`
 `;
 
 const ProjectName = styled.h2`
-  color: white;
   font-size: 1.7rem;
-  margin: 0;
 
   @media screen and (min-width: 769px) {
     font-size: 3rem;
@@ -95,14 +93,7 @@ const LogbuddyImageMobile = styled.img`
   }
 `;
 
-const AboutButton = styled.button`
-  width: 100%;
-  margin-top: 20px;
-  border: none;
-  background: transparent;
-  color: hotpink;
-  cursor: pointer;
-
+const AboutButton = styled(Button)`
   @media screen and (min-width: 769px) {
     font-size: 1.3rem;
   }

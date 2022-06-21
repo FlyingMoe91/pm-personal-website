@@ -1,63 +1,14 @@
-import { useEffect } from 'react';
 import styled from 'styled-components';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
 import Logbuddy from './Logbuddy';
 import LeanCoffeeBoard from './LeanCoffeeBoard';
 import QuizzApp from './QuizzApp';
-import { BsCaretRightFill as Arrow, BsCircleFill } from 'react-icons/bs';
+import { BsCaretRightFill as Arrow } from 'react-icons/bs';
 import RockPaperScissors from './RockPaperScissors';
 
 export default function Projects() {
-  useEffect(() => {
-    const project1 = document.querySelector('#logbuddy');
-    const project2 = document.querySelector('#test1');
-    const project3 = document.querySelector('#test2');
-    const elementHeight = project1.offsetHeight;
-    const elementWidth = project1.offsetWidth;
-    const project1Nav = document.querySelector('#project1Nav');
-    const project2Nav = document.querySelector('#project2Nav');
-    const project3Nav = document.querySelector('#project3Nav');
-
-    function isInViewport(el) {
-      const rect = el.getBoundingClientRect();
-      return (
-        rect.top >= -elementHeight &&
-        rect.left >= -elementWidth &&
-        rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) +
-            elementHeight &&
-        rect.right <=
-          (window.innerWidth || document.documentElement.clientWidth) +
-            elementWidth
-      );
-    }
-
-    document.addEventListener(('scroll', 'click', 'touchmove'), function () {
-      if (isInViewport(project1)) {
-        return (
-          (project1Nav.style.color = 'black'),
-          (project2Nav.style.color = 'lightgrey'),
-          (project3Nav.style.color = 'lightgrey')
-        );
-      } else if (isInViewport(project2)) {
-        return (
-          (project1Nav.style.color = 'lightgrey'),
-          (project2Nav.style.color = 'black'),
-          (project3Nav.style.color = 'lightgrey')
-        );
-      } else if (isInViewport(project3)) {
-        return (
-          (project1Nav.style.color = 'lightgrey'),
-          (project2Nav.style.color = 'lightgrey'),
-          (project3Nav.style.color = 'black')
-        );
-      }
-    });
-  });
-
   return (
     <ProjectsWrapper id='projects'>
-      <TopLine />
       <h2>MY PROJECTS</h2>
       <ProjectList id='ul'>
         <li>
@@ -81,12 +32,6 @@ export default function Projects() {
           </ProjectSlide>
         </li>
       </ProjectList>
-      <div>
-        <ProjectNav id='project1Nav' />
-        <ProjectNav id='project2Nav' />
-        <ProjectNav id='project3Nav' />
-      </div>
-      <BottomLine />
       <PreviousProject onClick={handleScrollLeft}>
         <Arrow />
         <ScreenReaderOnly>previous project</ScreenReaderOnly>
@@ -144,11 +89,6 @@ const ProjectSlide = styled.div`
   justify-content: center;
 `;
 
-const ProjectNav = styled(BsCircleFill)`
-  margin: 5px;
-  color: lightgrey;
-`;
-
 const NextProject = styled.a`
   position: absolute;
   top: 45%;
@@ -162,6 +102,10 @@ const NextProject = styled.a`
   border: none;
   background: transparent;
   cursor: pointer;
+
+  :hover {
+    color: hotpink;
+  }
 
   @media screen and (min-width: 769px) {
     top: 50%;
@@ -184,28 +128,12 @@ const PreviousProject = styled.button`
   background: transparent;
   cursor: pointer;
 
+  :hover {
+    color: hotpink;
+  }
+
   @media screen and (min-width: 769px) {
     top: 50%;
     left: 7vw;
   }
-`;
-
-const TopLine = styled.div`
-  width: 1px;
-  height: 4vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  left: 50%;
-`;
-
-const BottomLine = styled.div`
-  width: 1px;
-  height: 4vh;
-  background: black;
-  margin: 0 auto;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
 `;

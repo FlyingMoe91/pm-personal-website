@@ -133,6 +133,15 @@ const Wrapper = styled.section`
     font-weight: 300;
     width: 90%;
     margin: 10px auto;
+    font-size: 1.3rem;
+
+    @media screen and (min-width: 480px) {
+      font-size: 1.3rem;
+    }
+
+    @media screen and (min-width: 1201px) {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (min-width: 769px) {

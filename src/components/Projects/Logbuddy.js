@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import LogbuddyMobile from '../../images/projects/logbuddy/Logbuddy_desktop.png';
+import LogbuddyMobile from '../../images/projects/logbuddy/Logbuddy.png';
 import ProjectModal from './Modal';
 import logbuddy_home from '../../images/projects/logbuddy/Logbuddy_home.png';
 import logbuddy_dives from '../../images/projects/logbuddy/Logbuddy_dives.png';
 import logbuddy_certs from '../../images/projects/logbuddy/Logbuddy_certs.png';
 import logbuddy_map from '../../images/projects/logbuddy/Logbuddy_map.png';
+import Button from '../Button/Button';
 
 export default function Logbuddy() {
   const [projectModalActive, setProjectModalActive] = useState(false);
@@ -46,7 +47,6 @@ export default function Logbuddy() {
         <ProjectModal
           onClose={handleProjectModal}
           projectInfos={logbuddyInfos}
-          bgColor='#00687e'
         />
       )}
     </ProjectSlide>
@@ -64,9 +64,8 @@ export default function Logbuddy() {
 }
 
 const ProjectSlide = styled.div`
-  position: relative;
-  background-color: #00687e;
-  border-radius: 20px;
+  background-color: #cdf2f2;
+  border-radius: 5px;
   width: 80vw;
   height: 80vw;
   max-height: 510px;
@@ -82,9 +81,7 @@ const ProjectSlide = styled.div`
 `;
 
 const ProjectName = styled.h2`
-  color: white;
   font-size: 1.7rem;
-  margin: 0;
 
   @media screen and (min-width: 769px) {
     font-size: 3rem;
@@ -100,14 +97,7 @@ const LogbuddyImageMobile = styled.img`
   }
 `;
 
-const AboutButton = styled.button`
-  width: 100%;
-  margin-top: 20px;
-  border: none;
-  background: transparent;
-  color: hotpink;
-  cursor: pointer;
-
+const AboutButton = styled(Button)`
   @media screen and (min-width: 769px) {
     font-size: 1.3rem;
   }

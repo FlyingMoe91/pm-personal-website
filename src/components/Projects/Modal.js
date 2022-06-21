@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { BsFillXCircleFill } from 'react-icons/bs';
 import ScreenReaderOnly from '../Utilities/ScreenReaderOnly';
+import Button from '../Button/Button';
 
-export default function ProjectModal({ onClose, projectInfos, bgColor }) {
+export default function ProjectModal({ onClose, projectInfos }) {
   return (
     <Background>
       {projectInfos.map(
@@ -23,7 +24,7 @@ export default function ProjectModal({ onClose, projectInfos, bgColor }) {
           description2,
           techstack,
         }) => (
-          <ModalContent key={projectTitle} bgColor={bgColor}>
+          <ModalContent key={projectTitle}>
             <ButtonClose onClick={onClose}>
               <CloseIcon />
               <ScreenReaderOnly>close</ScreenReaderOnly>
@@ -33,12 +34,12 @@ export default function ProjectModal({ onClose, projectInfos, bgColor }) {
               <Screenshots src={pic1} alt={pic1description} />
               <div>
                 <p>{intro}</p>
-                <a target='_blank' rel='noreferrer' href={github_link}>
+                <ButtonLink target='_blank' rel='noreferrer' href={github_link}>
                   {projectTitle} Repository
-                </a>
-                <a target='_blank' rel='noreferrer' href={vercel_link}>
+                </ButtonLink>
+                <ButtonLink target='_blank' rel='noreferrer' href={vercel_link}>
                   {projectTitle} Mobile-App
-                </a>
+                </ButtonLink>
               </div>
               <div>{description1}</div>
               <Screenshots src={pic3} alt={pic3description} />
@@ -73,8 +74,7 @@ const ModalContent = styled.div`
   background-color: white;
   overflow: scroll;
   padding: 10px;
-  background-color: ${(props) => props.bgColor};
-  color: white;
+  background-color: #cdf2f2;
 `;
 
 const ContentGrid = styled.div`
@@ -82,18 +82,17 @@ const ContentGrid = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-items: center;
-
-  a {
-    display: block;
-    text-decoration: none;
-    color: hotpink;
-    font-weight: 500;
-    margin: 10px 0;
-  }
 `;
 
 const ProjectHeadline = styled.h3`
   font-size: 1.4rem;
+`;
+
+const ButtonLink = styled(Button)`
+  display: block;
+  font-size: 1rem;
+  width: 60%;
+  margin: 5px auto;
 `;
 
 const ButtonClose = styled.button`
@@ -109,7 +108,7 @@ const ButtonClose = styled.button`
 `;
 
 const CloseIcon = styled(BsFillXCircleFill)`
-  color: white;
+  color: black;
 `;
 
 const Screenshots = styled.img`

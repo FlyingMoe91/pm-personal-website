@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Button from '../Button/Button';
 
 import ProjectModal from './Modal';
 
@@ -41,7 +42,6 @@ export default function RockPaperScissors() {
         <ProjectModal
           onClose={handleProjectModal}
           projectInfos={RockPaperScissorsInfos}
-          bgColor='rgb(111, 162, 250)'
         />
       )}
     </ProjectSlide>
@@ -60,8 +60,8 @@ export default function RockPaperScissors() {
 
 const ProjectSlide = styled.div`
   position: relative;
-  background-color: rgb(111, 162, 250);
-  border-radius: 20px;
+  background-color: #cdf2f2;
+  border-radius: 5px;
   width: 80vw;
   height: 80vw;
   max-height: 510px;
@@ -77,9 +77,7 @@ const ProjectSlide = styled.div`
 `;
 
 const ProjectName = styled.h2`
-  color: white;
-  font-size: 2rem;
-  margin: 0;
+  font-size: 1.6rem;
 
   @media screen and (min-width: 769px) {
     font-size: 3rem;
@@ -95,14 +93,7 @@ const LogbuddyImageMobile = styled.img`
   }
 `;
 
-const AboutButton = styled.button`
-  width: 100%;
-  margin-top: 20px;
-  border: none;
-  background: transparent;
-  color: blue;
-  cursor: pointer;
-
+const AboutButton = styled(Button)`
   @media screen and (min-width: 769px) {
     font-size: 1.3rem;
   }
