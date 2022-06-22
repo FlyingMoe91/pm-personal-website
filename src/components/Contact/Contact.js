@@ -19,65 +19,67 @@ We really need someone like you in our team.
   });
 
   return (
-    <Wrapper id='contact'>
-      <h2>CONTACT</h2>
-      <p>Wanna get in touch?</p>{' '}
-      <p>
-        Just fill in your name, your email and press 'send email'. I took care
-        of the rest. Of course you can edit the inputs...but I think we know
-        that wont be necessary. <Smiley />
-      </p>
-      <Form id='form' onSubmit={handleSubmit}>
-        <label htmlFor='name'>name</label>
-        <input
-          type='text'
-          name='name'
-          id='name'
-          onChange={handleChange}
-          required
-          placeholder='your name'
-        />
-        <label htmlFor='company'>company</label>
-        <input
-          type='text'
-          name='company'
-          id='company'
-          onChange={handleChange}
-          placeholder='name of your company'
-        />
-        <label htmlFor='email'>email</label>
-        <input
-          type='email'
-          name='email'
-          id='email'
-          onChange={handleChange}
-          required
-          placeholder='your email'
-        />
-        <label htmlFor='subject'>subject</label>
-        <input
-          type='text'
-          name='subject'
-          id='subject'
-          onChange={handleChange}
-          required
-          placeholder='reason for your message'
-          defaultValue={values.subject}
-        />
-        <label htmlFor='message'>message</label>
-        <textarea
-          type='text'
-          name='message'
-          id='message'
-          rows='15'
-          onChange={handleChange}
-          required
-          placeholder='Hey Patrick, ....'
-          defaultValue={values.message}
-        />
-        <ResetButton onClick={handleResetForm}>reset form</ResetButton>
-        <SubmitButton>send email</SubmitButton>
-      </Form>
+    <Wrapper>
+      <ContactForm id='contact'>
+        <h2>CONTACT</h2>
+        <p>Wanna get in touch?</p>{' '}
+        <p>
+          Just fill in your name, your email and press 'send email'. I took care
+          of the rest. Of course you can edit the inputs...but I think we know
+          that wont be necessary. <Smiley />
+        </p>
+        <Form id='form' onSubmit={handleSubmit}>
+          <label htmlFor='name'>name</label>
+          <input
+            type='text'
+            name='name'
+            id='name'
+            onChange={handleChange}
+            required
+            placeholder='your name'
+          />
+          <label htmlFor='company'>company</label>
+          <input
+            type='text'
+            name='company'
+            id='company'
+            onChange={handleChange}
+            placeholder='name of your company'
+          />
+          <label htmlFor='email'>email</label>
+          <input
+            type='email'
+            name='email'
+            id='email'
+            onChange={handleChange}
+            required
+            placeholder='your email'
+          />
+          <label htmlFor='subject'>subject</label>
+          <input
+            type='text'
+            name='subject'
+            id='subject'
+            onChange={handleChange}
+            required
+            placeholder='reason for your message'
+            defaultValue={values.subject}
+          />
+          <label htmlFor='message'>message</label>
+          <textarea
+            type='text'
+            name='message'
+            id='message'
+            rows='15'
+            onChange={handleChange}
+            required
+            placeholder='Hey Patrick, ....'
+            defaultValue={values.message}
+          />
+          <ResetButton onClick={handleResetForm}>reset form</ResetButton>
+          <SubmitButton>send email</SubmitButton>
+        </Form>
+      </ContactForm>
     </Wrapper>
   );
 
@@ -125,6 +127,11 @@ We really need someone like you in our team.
 }
 
 const Wrapper = styled.section`
+  background-color: lightgrey;
+  padding: 20px;
+`;
+
+const ContactForm = styled.section`
   text-align: center;
   color: #313035;
   margin: 0 auto;
@@ -194,7 +201,8 @@ const SubmitButton = styled.button`
   transition: 0.5s;
 
   :hover {
-    background-color: lightgreen;
+    background-color: #cdf2f2;
+    color: hotpink;
   }
 `;
 

@@ -12,15 +12,15 @@ export default function Header() {
       <HeaderContent>
         <HeaderText>
           HI, I'M PATRICK. A JUNIOR WEB DEVELOPER FROM GERMANY.
+          <ToContact href='#contact'>
+            I want this guy already! <IconHand />
+          </ToContact>
         </HeaderText>
       </HeaderContent>
       <AboutMeArrow href='#intro'>
         intro
         <ArrowIcon />
       </AboutMeArrow>
-      <ToContact href='#contact'>
-        I want this guy already! <IconHand />
-      </ToContact>
     </HeaderWrapper>
   );
 }
@@ -39,16 +39,18 @@ const HeaderWrapper = styled.header`
 const HeaderContent = styled.div`
   float: right;
   width: 70%;
-  padding: 10px;
   margin-top: 120px;
 
   @media screen and (min-width: 1024px) {
     width: 50%;
-    margin: 0;
   }
 
   @media screen and (min-width: 1430px) {
     margin-top: 120px;
+  }
+
+  @media screen and (min-width: 1201px) {
+    position: relative;
   }
 `;
 
@@ -57,7 +59,6 @@ const HeaderText = styled.h1`
   font-size: 1.5rem;
   text-align: center;
   color: hotpink;
-  padding: 20px;
   margin: auto;
   transition: 0.8s;
 
@@ -101,13 +102,22 @@ const ToContact = styled(ButtonToContact)`
     bottom: 5vh;
     left: 320px;
   }
+
+  @media screen and (min-width: 1201px) {
+    position: relative;
+    display: block;
+    left: 0;
+    bottom: -100px;
+    width: 410px;
+    margin: 0 auto;
+  }
 `;
 
 const IconHand = styled(BsHandIndexThumb)`
   position: absolute;
   right: -15px;
   bottom: -15px;
-  color: white;
+  color: grey;
   font-size: 2rem;
   transform: rotate(-35deg);
 `;

@@ -12,7 +12,7 @@ export default function Footer() {
 
 const Wrapper = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: black;
   color: white;
 
