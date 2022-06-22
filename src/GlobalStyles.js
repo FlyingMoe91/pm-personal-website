@@ -15,5 +15,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 `;

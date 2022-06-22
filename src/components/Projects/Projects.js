@@ -78,6 +78,10 @@ const ProjectList = styled.ul`
   scroll-behavior: smooth;
   scrollbar-width: none; /*for firefox on windows */
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   li {
     scroll-snap-align: center;
   }
