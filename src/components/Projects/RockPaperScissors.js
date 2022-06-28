@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
+import RpsDesktop from '../../images/projects/rock-paper-scissor/rockpaperscissor.png';
 
 import ProjectModal from './Modal';
 
@@ -33,11 +34,7 @@ export default function RockPaperScissors() {
         <ProjectName>Rock, Paper, Scissors</ProjectName>
         <AboutButton onClick={handleProjectModal}>about this app</AboutButton>
       </div>
-      <LogbuddyImageMobile
-        src={'http://source.unsplash.com/random'}
-        alt='rock, paper, scissors'
-        height='200px'
-      />
+      <LogbuddyImageMobile src={RpsDesktop} alt='rock, paper, scissors' />
       {projectModalActive && (
         <ProjectModal
           onClose={handleProjectModal}

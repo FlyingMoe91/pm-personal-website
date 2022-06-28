@@ -113,5 +113,4 @@ const CloseIcon = styled(BsFillXCircleFill)`
 
 const Screenshots = styled.img`
   width: 150px;
-  background-color: #00687e;
 `;

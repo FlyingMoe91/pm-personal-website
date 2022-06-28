@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
+import QuizzAppMobile from '../../images/projects/quizzApp/QuizzApp.png';
+import QuizzApp1 from '../../images/projects/quizzApp/QuizzApp1.png';
+import QuizzApp2 from '../../images/projects/quizzApp/QuizzApp2.png';
+import QuizzApp3 from '../../images/projects/quizzApp/QuizzApp3.png';
+import QuizzApp4 from '../../images/projects/quizzApp/QuizzApp4.png';
 
 import ProjectModal from './Modal';
 
@@ -10,13 +15,13 @@ export default function QuizzApp() {
   const quizzAppInfos = [
     {
       projectTitle: 'Quizz App',
-      pic1: 'http://source.unsplash.com/random',
+      pic1: QuizzApp1,
       pic1description: '',
-      pic2: 'http://source.unsplash.com/random',
+      pic2: QuizzApp2,
       pic2description: '',
-      pic3: 'http://source.unsplash.com/random',
+      pic3: QuizzApp3,
       pic3description: '',
-      pic4: 'http://source.unsplash.com/random',
+      pic4: QuizzApp4,
       pic4description: '',
       github_link: 'https://github.com/FlyingMoe91/quiz-app',
       vercel_link: 'http://quiz-app-one-theta.vercel.app/',
@@ -33,11 +38,7 @@ export default function QuizzApp() {
         <ProjectName>Quizz App</ProjectName>
         <AboutButton onClick={handleProjectModal}>about this app</AboutButton>
       </div>
-      <LogbuddyImageMobile
-        src={'http://source.unsplash.com/random'}
-        alt='quizz app'
-        height='200px'
-      />
+      <MobileMainPic src={QuizzAppMobile} alt='quizz app' />
       {projectModalActive && (
         <ProjectModal
           onClose={handleProjectModal}
@@ -77,14 +78,14 @@ const ProjectSlide = styled.div`
 `;
 
 const ProjectName = styled.h2`
-  font-size: 2rem;
+  font-size: 1.7rem;
 
   @media screen and (min-width: 769px) {
     font-size: 3rem;
   }
 `;
 
-const LogbuddyImageMobile = styled.img`
+const MobileMainPic = styled.img`
   @media screen and (max-width: 1025px) {
     width: 70vw;
   }
