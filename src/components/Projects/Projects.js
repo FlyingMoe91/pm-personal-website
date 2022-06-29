@@ -5,8 +5,46 @@ import LeanCoffeeBoard from './LeanCoffeeBoard';
 import QuizzApp from './QuizzApp';
 import { BsCaretRightFill as Arrow } from 'react-icons/bs';
 import RockPaperScissors from './RockPaperScissors';
+import { useEffect } from 'react';
 
 export default function Projects() {
+  useEffect(() => {
+    const logbuddy = document.querySelector('#logbuddy');
+    const quizzapp = document.querySelector('#quizzApp');
+    const elementHeight = logbuddy.offsetHeight;
+    const elementWidth = logbuddy.offsetWidth;
+
+    function isInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= -elementHeight &&
+        rect.left >= -elementWidth &&
+        rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) +
+            elementHeight &&
+        rect.right <=
+          (window.innerWidth || document.documentElement.clientWidth) +
+            elementWidth
+      );
+    }
+
+    document.addEventListener('scroll' && 'click' && 'touchmove', function () {
+      if (isInViewport(logbuddy)) {
+        document.querySelector('#buttonLeft').style.display = 'none';
+      } else {
+        document.querySelector('#buttonLeft').style.display = 'block';
+      }
+    });
+
+    document.addEventListener('scroll' || 'click' || 'touchmove', function () {
+      if (isInViewport(quizzapp)) {
+        document.querySelector('#buttonRight').style.display = 'none';
+      } else {
+        document.querySelector('#buttonRight').style.display = 'block';
+      }
+    });
+  }, []);
+
   return (
     <ProjectsWrapper id='projects'>
       <h2>MY PROJECTS</h2>
@@ -32,11 +70,11 @@ export default function Projects() {
           </ProjectSlide>
         </li>
       </ProjectList>
-      <PreviousProject onClick={handleScrollLeft}>
+      <PreviousProject id='buttonLeft' onClick={handleScrollLeft}>
         <Arrow />
         <ScreenReaderOnly>previous project</ScreenReaderOnly>
       </PreviousProject>
-      <NextProject onClick={handleScrollRight}>
+      <NextProject id='buttonRight' onClick={handleScrollRight}>
         <Arrow />
         <ScreenReaderOnly>next project</ScreenReaderOnly>
       </NextProject>
