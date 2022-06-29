@@ -64,7 +64,7 @@ const ProjectSlide = styled.div`
   max-height: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 5vw;
 

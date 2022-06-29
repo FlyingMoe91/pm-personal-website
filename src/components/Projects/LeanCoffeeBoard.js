@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
+import leanCoffeeBoard from '../../images/projects/lean-coffee-board/LeanCoffeeBoard.png';
 
 import ProjectModal from './Modal';
 
@@ -33,11 +34,7 @@ export default function LeanCoffeeBoard() {
         <ProjectName>Lean Coffee Board</ProjectName>
         <AboutButton onClick={handleProjectModal}>about this app</AboutButton>
       </div>
-      <LogbuddyImageMobile
-        src={'http://source.unsplash.com/random'}
-        alt='lean coffee board'
-        height='200px'
-      />
+      <LogbuddyImageMobile src={leanCoffeeBoard} alt='lean coffee board' />
       {projectModalActive && (
         <ProjectModal
           onClose={handleProjectModal}
@@ -67,7 +64,7 @@ const ProjectSlide = styled.div`
   max-height: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 5vw;
 
