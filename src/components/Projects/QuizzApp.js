@@ -16,19 +16,21 @@ export default function QuizzApp() {
     {
       projectTitle: 'Quizz App',
       pic1: QuizzApp1,
-      pic1description: '',
+      pic1description: 'Quizz App questions',
       pic2: QuizzApp2,
-      pic2description: '',
+      pic2description: 'Quizz App Bookmarks',
       pic3: QuizzApp3,
-      pic3description: '',
+      pic3description: 'Create Page',
       pic4: QuizzApp4,
-      pic4description: '',
+      pic4description: 'Profile Page',
       github_link: 'https://github.com/FlyingMoe91/quiz-app',
       vercel_link: 'http://quiz-app-one-theta.vercel.app/',
-      intro: '',
-      description1: '',
-      description2: '',
-      techstack: '',
+      intro:
+        'The Quizz App was one of my first projects during the bootcamp at neuefische. ',
+      description1: 'You can bookmark interesting questions for later',
+      description2: 'Or Create new ones yourself.',
+      techstack:
+        ' HTML5, CSS3, BEM, VanillaJS, husky, GitHubActions, ESLint, Prettier',
     },
   ];
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
 import leanCoffeeBoard from '../../images/projects/lean-coffee-board/LeanCoffeeBoard.png';
-
+import leanCoffeeBoardLog from '../../images/projects/lean-coffee-board/LeanCoffeeBoardLog.png';
 import ProjectModal from './Modal';
 
 export default function LeanCoffeeBoard() {
@@ -11,20 +11,23 @@ export default function LeanCoffeeBoard() {
   const leanCoffeeBoardInfos = [
     {
       projectTitle: 'Lean Coffee Board',
-      pic1: 'http://source.unsplash.com/random',
-      pic1description: '',
-      pic2: 'http://source.unsplash.com/random',
+      pic1: leanCoffeeBoardLog,
+      pic1description: 'lean coffee board login',
+      pic2: '',
       pic2description: '',
-      pic3: 'http://source.unsplash.com/random',
-      pic3description: '',
-      pic4: 'http://source.unsplash.com/random',
+      pic3: leanCoffeeBoard,
+      pic3description: 'lean coffee board mainpage',
+      pic4: '',
       pic4description: '',
       github_link: 'https://github.com/FlyingMoe91/lean-coffee-board',
       vercel_link: 'http://lean-coffee-board-sandy.vercel.app/',
-      intro: '',
-      description1: '',
+      intro:
+        'Lean Coffee Board was one of my last projects during my bootcamp at neuefische',
+      description1:
+        'Everyone with a the link can enter the board with their name and share information, ideas or other important notes on the board.',
       description2: '',
-      techstack: '',
+      techstack:
+        ' React, React Testing Library, Jest, Styled Components, Storybook, Serverless Functions, Vercel API, Node.js, MongoDB Atlas, Mongoose',
     },
   ];
 

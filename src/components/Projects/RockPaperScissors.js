@@ -2,7 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Button from '../Button/Button';
 import RpsDesktop from '../../images/projects/rock-paper-scissor/rockpaperscissor.png';
-
+import RpsStart from '../../images/projects/rock-paper-scissor/rockpaperscissors-start.png';
+import RpsInGame from '../../images/projects/rock-paper-scissor/rockpaperscissors-ingame.png';
 import ProjectModal from './Modal';
 
 export default function RockPaperScissors() {
@@ -10,18 +11,19 @@ export default function RockPaperScissors() {
 
   const RockPaperScissorsInfos = [
     {
-      projectTitle: 'Quizz App',
-      pic1: 'http://source.unsplash.com/random',
-      pic1description: '',
-      pic2: 'http://source.unsplash.com/random',
-      pic2description: '',
-      pic3: 'http://source.unsplash.com/random',
-      pic3description: '',
-      pic4: 'http://source.unsplash.com/random',
+      projectTitle: 'Rock, Paper, Scissors',
+      pic1: RpsStart,
+      pic1description: 'rock, paper, scissors start screen',
+      pic2: RpsInGame,
+      pic2description: 'rock, paper, scissors in game screen',
+      pic3: RpsDesktop,
+      pic3description: 'rock,paper,scissors final screen',
+      pic4: '',
       pic4description: '',
       github_link: 'https://github.com/FlyingMoe91/rock-paper-scissor',
       vercel_link: 'https://flyingmoe91.github.io/rock-paper-scissor/',
-      intro: '',
+      intro:
+        'Rock, Paper, Scissors was my first big javascript project I coded out of my head with the help of the online platform "the odin project."',
       description1: '',
       description2: '',
       techstack: '',

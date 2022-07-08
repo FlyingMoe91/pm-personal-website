@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 export default function ProjectModal({ onClose, projectInfos }) {
   return (
-    <Background>
+    <Background onClick={onClose}>
       {projectInfos.map(
         ({
           projectTitle,
@@ -38,14 +38,14 @@ export default function ProjectModal({ onClose, projectInfos }) {
                   {projectTitle} Repository
                 </ButtonLink>
                 <ButtonLink target='_blank' rel='noreferrer' href={vercel_link}>
-                  {projectTitle} Mobile-App
+                  {projectTitle}
                 </ButtonLink>
               </div>
               <div>{description1}</div>
               <Screenshots src={pic3} alt={pic3description} />
               <Screenshots src={pic2} alt={pic2description} />
               <div>{description2}</div>
-              <div>{techstack}</div>
+              <div>Tech stack:{techstack}</div>
               <Screenshots src={pic4} alt={pic4description} />
             </ContentGrid>
           </ModalContent>
@@ -57,7 +57,7 @@ export default function ProjectModal({ onClose, projectInfos }) {
 
 const Background = styled.div`
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   top: 0;
   bottom: 0;
   right: 0;
@@ -67,21 +67,25 @@ const Background = styled.div`
 
 const ModalContent = styled.div`
   position: relative;
-  padding: 0;
   margin: 15px auto;
+  padding: 10px;
   height: 95vh;
   width: 95vw;
-  background-color: white;
-  overflow: scroll;
-  padding: 10px;
   background-color: #cdf2f2;
+  overflow: scroll;
+  border: 5px solid white;
+
+  @media screen and (min-width: 769px) {
+    width: 730px;
+  }
 `;
 
 const ContentGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   align-items: center;
   justify-items: center;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const ProjectHeadline = styled.h3`
@@ -91,14 +95,14 @@ const ProjectHeadline = styled.h3`
 const ButtonLink = styled(Button)`
   display: block;
   font-size: 1rem;
-  width: 60%;
+  width: 80%;
   margin: 5px auto;
 `;
 
 const ButtonClose = styled.button`
   position: fixed;
-  left: 0px;
-  top: 15px;
+  left: 30px;
+  top: 35px;
   font-size: 2rem;
   width: 35px;
   height: 35px;
@@ -108,7 +112,7 @@ const ButtonClose = styled.button`
 `;
 
 const CloseIcon = styled(BsFillXCircleFill)`
-  color: black;
+  color: white;
 `;
 
 const Screenshots = styled.img`

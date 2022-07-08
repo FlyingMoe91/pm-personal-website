@@ -32,7 +32,7 @@ export default function Logbuddy() {
       description2:
         ' Keeping track of dives, divespots or photos made easy. With Logbuddy all important information are quickly accessible and always in your pocket with you.',
       techstack:
-        'Tech stack: React, React Router, React Testing Library, Storybook, Styled Components, Cloudinary, Leaflet, Mapbox, Axios, Vercel',
+        ' React, React Router, React Testing Library, Storybook, Styled Components, Cloudinary, Leaflet, Mapbox, Axios, Vercel',
     },
   ];
 
